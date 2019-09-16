@@ -1,5 +1,13 @@
 {% extends "./_site-wrapper.njk" %}
 
 {% block content %}
-{{ content | safe }}
+  <h1>{{ title }}</h1>
+  <p>{{ preface }}</p>
+  <dl class="meta">
+    <dt class="meta__title">Dates</dt>
+    <dd class="meta__value space--pico"><p>{{ date_start | date("MMM YYYY") }} - {{ date_end | date("MMMM YYYY") }}</p></dd>
+    <dt class="meta__title">My role</dt>
+    <dd class="meta__value"><p>{% for role in roles %}{{ role }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p></dd>
+  </dl>
+  {{ content | safe }}
 {% endblock %}

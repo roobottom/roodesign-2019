@@ -1,0 +1,14 @@
+{# images #}
+{% macro image(url,caption) %}
+  <figure class="figure figure--single-image">
+  <img src="{{ url }}" class="image"{% if data.caption %} alt="{{ caption }}"{% endif %}>
+  {% if data.caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  </figure>
+{% endmacro %}
+
+{# prose #}
+{% macro prose() %}
+  <div class="prose">
+  {% markdown %}{{ caller() }}{% endmarkdown %}
+  </div>
+{% endmacro %}

@@ -1,7 +1,7 @@
 ---
 title: Designing better products at Onalytica
-date-start: 01-11-2018
-date-end: 28-02-2019
+date_start: 2018-11-01
+date_end: 2019-02-28
 layout: case-study.njk
 tags: case-study
 roles:
@@ -10,8 +10,14 @@ roles:
   - Pattern library creation
 preface: |
   I helped Onalytica’s design and product teams improve processes and kick-start a standardised approach to interface design.
+images:
+  testing:
+    url: /assets/images/case-studies/onalytica-user-testing.jpg
+    caption: "Gathering insights into how Discover solves problems for Onalytica's users."
 ---
-## Discovery {.marker .marker--number aria-title="Discover your mum"}
+{% import "../_includes/components.njk" as c %}
+{% call c.prose() %}
+## Discovery {.marker .marker--number aria-title="Discover your mumzz"}
 
 Onalytica's goals were threefold:
 
@@ -20,14 +26,15 @@ Onalytica's goals were threefold:
 3. to help better define roles and responsibilities within the product and design team.
 
 I spent time interviewing their users — both external clients and internal "power" users. I also conducted one-to-one sessions with designers, product managers and developers.
-
+{% endcall %}
+{{ c.image(images.testing.url) }}
+{% call c.prose() %}
 ## The low hanging fruit
 
 Using the general themes which emerged from the user interviews (via an affinity mapping exercise) as pointers, I conducted a full app review — this highlighted different classes of issue that were causing problems in users' understanding of Discover. 
 
 I prioritised the emerging themes so I could present these back as next-step recommendations to the whole team.
 
-{{ partial:figure set="appreview" }}
 
 ## Aligning teams from the top
 
@@ -35,7 +42,7 @@ It was clear that many of the skills and processes they needed to improve the ov
 
 I gave a presentation to Onalytica's management team in which I outlined a framework process and a set of clearly defined roles they needed to make this process work.
 
-{{ partial:figure set="presentation" }}
+
 
 ## Co-designing 
 
@@ -49,7 +56,7 @@ To address the issue of inconsistency of the interface in Discover, I built a si
 
 From the time I'd spent with developers, I'd discovered they were dissatisfied with the quality of the design specification they were receiving.  I helped Onalytica introduce Zeplin into their workflow to provide a detailed spec to the engineering team.
 
-{{ partial:figure set="zeplin" }}
+
 
 ## Outcomes
 
@@ -58,3 +65,4 @@ I loved working with the team at Onlytica. They were open to suggestions and eag
 > Jon has improved our processes, leading to better integration of design into the business. Through his time with us, Jon raised the visibility of design across the company, making it easier to engage with stakeholders.
 
 **Karl Roche**, Senior UX Designer at Onalytica
+{% endcall %}

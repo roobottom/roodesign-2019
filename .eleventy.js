@@ -1,13 +1,29 @@
-module.exports = function (eleventyConfig) {
+const markdownIt = require("markdown-it")
+const markdownItAttrs = require("markdown-it-attrs")
+const moment = require("moment")
 
-  let markdownIt = require("markdown-it");
-  let markdownItAttrs = require("markdown-it-attrs");
+module.exports = function (config) {
+
+  //general markdown options
   let options = {
     typographer: true
-  };
-  let markdownLib = markdownIt(options).use(markdownItAttrs);
+  }
+  let md = markdownIt(options)
+            .use(markdownItAttrs)
 
-  eleventyConfig.setLibrary("md", markdownLib);
+  //markdown for direct `.md` file processing
+  config.setLibrary("md", md)
+
+
+  //markdown for in `njk` template processing
+  config.addPairedShortcode("markdown", function(content) {
+    return md.render(content)
+  })
+
+  //filters
+  config.addFilter("date", function(value, format="Do MMMM YYYY") {
+    return moment(value).format(format)
+  })
 
   return {
     dir: {
