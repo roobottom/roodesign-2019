@@ -12,3 +12,35 @@
   {% markdown %}{{ caller() }}{% endmarkdown %}
   </div>
 {% endmacro %}
+
+{# card #}
+{% macro card(data) %}
+<article class="card {{data.classes}}{% if data.url %} card--is-linked{% endif %}{%  if data.color %} card--color-{{ data.color }}{% endif %}">
+  
+  {% if data.cover %}
+  <header class="card__cover">
+    {# {{ partial:components/figure :figure_images="cover" figure_classes="figure--bleed-start figure--{color}" }} #}
+  </header>
+  {% endif %}
+
+  <div class="card__content">
+    <h2 class="_title space--pico">{{ data.title }}</h2>
+    {% call prose() %}
+      {{ data.content }}
+    {% endcall %}
+  </div>
+    
+    {% if data.footer %}
+    <footer class="card__footer">
+      {% call prose() %}
+      {{ data.footer }}
+    {% endcall %}
+    </footer>
+    {% endif %}
+
+    {% if data.url %}
+        <a href="{{ data.url }}" class="card__cta">{{ data.cta }}</a>
+    {% endif %}
+
+</article>
+{% endmacro %}

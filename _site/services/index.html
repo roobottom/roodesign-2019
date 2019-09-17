@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Portfolio of Jon Roobottom, a designer from the UK">
-    <title>{{ title }} / Roodesign</title>
+    <title>Services / Roodesign</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,700,700i,900,900i|Fira+Mono|Fira+Sans+Extra+Condensed:900" rel="stylesheet"/>
     <link href="/assets/roodesign.css" rel="stylesheet"/>
 </head>
@@ -24,16 +24,53 @@
             </svg>
         </a>
         <ul class="navigation__items">
-          <li><a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-          {% for link in navigation %}
-            <li><a href="{{ link.url }}" {% if page.url.startsWith(link.url) %}class="active"{% endif %}>{{ link.title }}</a></li>
-          {% endfor %}
+          <li><a href="/" >Home</a></li>
+          
+            <li><a href="/services" class="active">Services</a></li>
+          
+            <li><a href="/case-studies" >Case studies</a></li>
+          
+            <li><a href="/about-me" >About me</a></li>
+          
         </ul>
     </nav>
-    {% block header %}{% endblock %}
+    
+  <div class="grid grid--cinched space--alto">
+      <h1 class="bleed--start">Services</h1>
+  </div>
+
   </header>
 
-  {% block content %}{% endblock %}
+  
+<main class="container">
+  
+<div class="grid">
+  <h2 class="space--short">Featured work</h2>
+</div>
+<div class="grid grid--halves space--alto">
+  
+<article class="card ">
+  
+  
+
+  <div class="card__content">
+    <h2 class="_title space--pico">hi</h2>
+    
+  <div class="prose">
+  
+  </div>
+
+  </div>
+    
+    
+
+    
+
+</article>
+
+</div>
+</main>
+
 
   <footer class="footer container">
     <svg width="32" height="38" xmlns="http://www.w3.org/2000/svg" class="footer__badge">
@@ -46,7 +83,7 @@
         </g>
     </svg>
     <div class="footer__content">
-        <p class="footer__copyright">&copy; 2001-{% today 'YYYY' %} <strong>Jon Roobottom</strong></p>     
+        <p class="footer__copyright">&copy; 2001-2019 <strong>Jon Roobottom</strong></p>     
         <ul class="footer__social">
             <li><a href="https://github.com/roobottom" title="Jon Roobottom's Github profile">Github</a></li>
             <li><a href="https://medium.com/@roobottom" title="Jon Roobottom's articles on Medium">Medium</a></li>

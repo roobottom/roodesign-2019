@@ -20,10 +20,18 @@ module.exports = function (config) {
     return md.render(content)
   })
 
+  //today's date
+  config.addShortcode("today", function (format="Do MMMM YYYY") {
+    return moment().format(format)
+  })
+
   //filters
   config.addFilter("date", function(value, format="Do MMMM YYYY") {
     return moment(value).format(format)
   })
+
+  //static files
+  config.addPassthroughCopy("_source/assets")
 
   return {
     dir: {

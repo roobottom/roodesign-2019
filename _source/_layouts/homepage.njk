@@ -1,0 +1,21 @@
+{% extends "./_site-wrapper.njk" %}
+
+{% block header %}
+  <div class="grid grid--cinched space--alto">
+      <h1 class="bleed--start">{{ title }}</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+<main class="container">
+  <div class="grid grid--showcase">
+    <article>
+      <div class="prose space--alto">
+        {{ content | safe }}
+      </div>
+    {# {{ partial:components/button :button_url="cta_url" :button_title="cta" button_type="link" }} #}
+    </article>
+    {# {{ partial:components/figure :figure_images="illustration" }} #}
+  </div>
+</main>
+{% endblock %}

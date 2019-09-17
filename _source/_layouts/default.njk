@@ -1,5 +1,13 @@
 {% extends "./_site-wrapper.njk" %}
 
+{% block header %}
+  <div class="grid grid--cinched space--alto">
+      <h1 class="bleed--start">{{ title }}</h1>
+  </div>
+{% endblock %}
+
 {% block content %}
-{{ content | safe }}
+<main class="container">
+  {{ content | safe }}
+</main>
 {% endblock %}
