@@ -1,13 +1,19 @@
 ---
-title: Services
+title: What I do
 layout: default.njk
+design_content: |
+  Some content will live here, eventually.
 ---
 {% import "./_includes/components.njk" as c %}
-<div class="grid">
-  <h2 class="space--short">Featured work</h2>
-</div>
 <div class="grid grid--halves space--alto">
   {{ c.card({
-    title: 'hi'
+    title: 'Digital product design',
+    content: design_content,
+    color: 'purple'
+  }) }}
+  {{ c.card({
+    title: 'Design process consultancy',
+    content: design_content,
+    color: 'red'
   }) }}
 </div>

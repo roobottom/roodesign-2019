@@ -25,22 +25,18 @@
 
   <div class="card__content">
     <h2 class="_title space--pico">{{ data.title }}</h2>
-    {% call prose() %}
-      {{ data.content }}
-    {% endcall %}
+    {% call prose() %}{{ data.content }}{% endcall %}
   </div>
     
-    {% if data.footer %}
-    <footer class="card__footer">
-      {% call prose() %}
-      {{ data.footer }}
-    {% endcall %}
-    </footer>
-    {% endif %}
+  {% if data.footer %}
+  <footer class="card__footer">
+    {% call prose() %}{{ data.footer }}{% endcall %}
+  </footer>
+  {% endif %}
 
-    {% if data.url %}
-        <a href="{{ data.url }}" class="card__cta">{{ data.cta }}</a>
-    {% endif %}
+  {% if data.url %}
+      <a href="{{ data.url }}" class="card__cta">{{ data.cta }}</a>
+  {% endif %}
 
 </article>
 {% endmacro %}
