@@ -1,0 +1,37 @@
+.quote {
+    box-sizing: border-box;
+    position: relative;
+
+    &:after {
+        content: "";
+        display: block;
+        width: unit(41/@base,rem);
+        height: unit(33/@base,rem);
+
+        position: absolute;
+        top: unit( -43 / @base,rem);
+        left: 0;
+        background: url('@{img_path}quote-splodge.svg') top left no-repeat;
+        background-size: contain;
+
+        .break-max({
+            width: unit(61/@base,rem);
+            height: unit(53/@base,rem);
+            left: unit(-53/@base,rem);
+            top: unit(-15/@base,rem);
+            z-index: -1;
+        });
+    }
+
+    >p {
+        #type > #size > .x-large;
+        #type > #font > .serif;
+        margin-bottom: unit(12/@base,rem);
+    }
+    cite {
+        #type > #size > .small;
+        &, a { color: @c_grey_med; }
+        align-self: end;
+        font-style: normal;
+    }
+}

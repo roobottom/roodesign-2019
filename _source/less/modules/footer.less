@@ -1,0 +1,46 @@
+.footer {
+
+    position: relative;
+    margin-top: unit(@gap * 4 / @base, rem);
+    margin-top: ~"calc( var(--gap) * 4)";
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border-top: 1px solid @c_grey_med;
+        padding-top: unit(@gap / @base, rem);
+        padding-top: var(--gap);
+    }
+
+    &__badge {
+        position: absolute;
+        left: 50%;
+        top: -19px;
+        margin-left: -18px;
+    }
+
+
+    
+
+    &, a {
+        color: @c_grey_x-dark;
+    }
+
+
+
+    li {
+        list-style: none;
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+            margin-right: unit(18/@base,rem);
+            &:last-child { margin: 0; }
+        }
+    }
+}

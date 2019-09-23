@@ -1,0 +1,18 @@
+.meta {
+    #type > #size > .small;
+    &, a { color: @c_grey_med; }
+
+    border-top: 1px solid @c_grey_light;
+    padding-top: unit(8/@base,rem);
+
+    .break-min({
+        border-top: none;
+        padding-top: 0;
+
+    });
+
+    &__title {
+        font-weight: bold;
+    }
+
+}

@@ -1,0 +1,117 @@
+.card {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 20px fade(black,10%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    #animation > .bounce;
+
+    border-top: 3px solid transparent;
+
+    &--ghost {
+      box-shadow: none;
+      border: 1px dashed @c_grey_light;
+      color: @c_grey_med;
+    }
+
+
+    &--is-linked:hover {
+        .break-mid({
+           transform: scale(1.05);
+        });
+    }
+
+    &--color {
+      &-green {
+        border-top-color: @c_green;
+        .card__cover {
+          background-color: @c_green;
+        }
+      }
+      &-red {
+        border-top-color: @c_red;
+        .card__cover {
+          background-color: @c_red;
+        }
+      }
+      &-blue {
+        border-top-color: @c_blue;
+        .card__cover {
+          background-color: @c_blue;
+        }
+      }
+      &-purple {
+        border-top-color: @c_purple;
+        .card__cover {
+          background-color: @c_purple;
+        }
+      }
+      &-yellow {
+        border-top-color: @c_yellow;
+        .card__cover {
+          background-color: @c_yellow;
+        }
+      }
+      
+    }
+
+    &__content,
+    &__footer,
+    &__cta,
+    &__cover {
+        padding: unit(@gap * 1.5 / @base,rem);
+        padding: ~"var(--gap) calc( var(--gap) * 1.5)";
+        display: block;
+    }
+
+    &__cover {
+      margin-bottom: @gap-rem;
+      margin-bottom: var(--gap);
+    }
+    
+
+    &--tight &__cover {
+      padding: 0;
+    }
+
+    &.sm &__content,
+    &.sm &__footer,
+    &.sm &__cta,
+    &.sm &__cover {
+        padding: unit(@gap / @base,rem);
+        padding: ~"var(--gap)";
+        display: block;
+    }
+
+    &__cta {
+        color: @c_grey_x-dark;
+        #type > #size > .regular;
+        display: flex;
+        align-items: center;
+
+        &:before {
+            position: absolute;
+            display: block;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .icon {
+            margin-left: unit(4/@base,rem);
+        }
+
+    }
+
+
+    &__footer {
+        border-top: 1px solid @c_grey_light;
+        background: url('@{img_path}pattern-roo-black-10.svg') top left repeat;
+        margin-top: auto;
+    }
+    
+}

@@ -8,9 +8,15 @@
     "markdown-it-attrs": "^3.0.1",
     "moment": "^2.24.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1"
+  },
   "scripts": {
-    "run-local": "npx @11ty/eleventy --serve"
+    "11ty": "npx @11ty/eleventy --serve",
+    "gulp": "npx gulp",
+    "dev": "concurrently --kill-others \"npm run 11ty\" \"npm run gulp\""
   },
   "repository": {
     "type": "git",

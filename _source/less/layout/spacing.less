@@ -1,0 +1,58 @@
+#space {
+    .calc(@space:1) {
+        margin-bottom: unit(@gap * @space / @base, rem);
+        margin-bottom: ~"calc( var(--gap) * @{space} )";
+    }
+    .pico() {
+        @s: 14 / @gap;
+        #space > .calc(@s);
+    }
+    .short() {
+        #space > .calc();
+    }
+    .tall() {
+        #space > .calc(2);
+    }
+    .alto() {
+        #space > .calc(3);
+    }
+    .grande() {
+        #space > .calc(6)
+    }
+}
+
+.space--pico {
+    #space > .pico;
+}
+.space--short {
+    #space > .short;
+}
+.space--tall {
+    #space > .tall;
+}
+.space--alto {
+    #space > .alto;
+}
+.space--grande {
+    #space > .grande;
+}
+
+.break-max({
+    .bleed--start,
+    .bleed--end {
+        width: ~"calc(100% + @{gap-rem})";
+        width: ~"calc(100% + var(--gap))";
+    }
+    .bleed--start.bleed--end {
+        width: ~"calc(100% + (2 * @{gap-rem}))";
+        width: ~"calc(100% + (2 * var(--gap)))";
+    }
+    .bleed--start {
+        margin-left: -1 * @gap-rem;
+        margin-left: ~"calc(-1 * var(--gap))";
+    }
+    .bleed--end {
+        margin-right: -1 * @gap-rem;
+        margin-right: ~"calc(-1 * var(--gap))";
+    }
+});

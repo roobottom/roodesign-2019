@@ -1,9 +1,29 @@
+{# image and gallery options:
+
+* bleed-start
+* bleed-end
+* stage #}
+
 {# images #}
-{% macro image(url,caption) %}
-  <figure class="figure figure--single-image">
-  <img src="{{ url }}" class="image"{% if data.caption %} alt="{{ caption }}"{% endif %}>
-  {% if data.caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+{% macro image(url,caption,options) %}
+  <figure class="figure figure--single-image {% for option in options %}figure--{{ option }} {% endfor %}">
+  <div class="figure__images">
+    <img src="{{ url }}" class="image"{% if caption %} alt="{{ caption }}"{% endif %}>
+  </div>
+  {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
   </figure>
+{% endmacro %}
+
+{# gallery #}
+{% macro gallery(urls, caption, options) %}
+  <figure class="figure figure--gallery {% for option in options %}figure--{{ option }} {% endfor %}">
+  <div class="figure__images">
+    {% for url in urls -%}
+    <img src="{{ url }}" class="image" {% if data.caption %} alt="{{ caption }} - {{ loop.index }} of {{ loop.length }} images"{% endif %}>
+    {%- endfor %}
+  </div>
+  {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  </figcaption>
 {% endmacro %}
 
 {# prose #}
@@ -39,4 +59,14 @@
   {% endif %}
 
 </article>
+{% endmacro %}
+
+{# quote #}
+{% macro quote(content,cite) %}
+<blockquote class="quote">
+  <p>{{ content }}</p>
+  <cite>
+    <p>{{ cite | safe }}</p>
+  </cite>
+</blockquote>
 {% endmacro %}

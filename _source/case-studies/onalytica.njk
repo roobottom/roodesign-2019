@@ -3,7 +3,7 @@ title: Helping a team achieve design process nirvana
 date_start: 2018-11-01
 date_end: 2019-02-28
 roles:
-  - Process review
+  - Product and process review
   - Hands-on design and code
   - Pattern library creation
 color: green
@@ -14,6 +14,15 @@ images:
   testing:
     url: /assets/images/case-studies/onalytica/user-testing.jpg
     caption: "Gathering insights into how Discover solves problems for Onalytica's users."
+  slides:
+    urls:
+      - /assets/images/case-studies/onalytica/presentation/A.jpg
+      - /assets/images/case-studies/onalytica/presentation/B.jpg
+      - /assets/images/case-studies/onalytica/presentation/C.jpg
+      - /assets/images/case-studies/onalytica/presentation/D.jpg
+      - /assets/images/case-studies/onalytica/presentation/E.jpg
+      - /assets/images/case-studies/onalytica/presentation/F.jpg
+    caption: Some of the slides from a presentation on design process I gave to Onalytica's leadership team.
 ---
 {% import "../_includes/components.njk" as c %}
 {# define markdown sections #}
@@ -37,6 +46,13 @@ It was clear that many of the skills and processes they needed to improve the ov
 
 I gave a presentation to Onalytica's management team in which I outlined a framework process and a set of clearly defined roles they needed to make this process work.
 {% endset %}
+{% set designCode %}
+In the second phase of work I co-designed and built a front-end pattern library.
+
+Working alongside Onalytica’s design and development teams, I created a custom build of Bootstrap. I built a pattern library interface to enable developers to pick and use components easily.
+
+All the components compose together, so the pattern library can also be used to create a test new interface combinations quickly.
+{% endset %}
 
 {# render page #}
 <section class="container space--grande" id="discovery">
@@ -47,7 +63,7 @@ I gave a presentation to Onalytica's management team in which I outlined a frame
     {% call c.prose() %}
     {{ discovery }}
     {% endcall %}
-    {{ c.image(images.testing.url) }}
+    {{ c.image(images.testing.url, images.testing.caption, ['bleed-start','bleed-end']) }}
   </div>
 </section>
 <section class="container space--grande" id="refining">
@@ -57,6 +73,27 @@ I gave a presentation to Onalytica's management team in which I outlined a frame
   <div class="grid grid--fat-thin">
     {% call c.prose() %}
     {{ refining }}
+    {% endcall %}
+  </div>
+  <div class="grid space--short">
+    {{ c.gallery(images.slides.urls,images.slides.caption,['bleed-start','bleed-end','stage']) }}
+  </div>
+</section>
+<section class="container space--grande">
+  <div class="grid grid--cinched">
+    {{ c.quote(
+      'Jon has improved our processes, leading to better integration of design into the business. Through his time with us, Jon raised the visibility of design across the company, making it easier to engage with stakeholders.',
+      'Karl Roche<br>Senior UX Designer at Onalytica'
+    ) }}
+  </div>
+</section>
+<section class="container space--grande" id="designCode">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#designCode">From design to code</a></h2>
+  </div>
+  <div class="grid grid--fat-thin space--short">
+    {% call c.prose() %}
+    {{ designCode }}
     {% endcall %}
   </div>
 </section>

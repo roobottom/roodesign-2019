@@ -1,0 +1,35 @@
+#container {
+    .default() {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 @gap-rem;
+        padding: 0 var(--gap);
+        max-width: unit(@site-width/@base,rem);
+    }
+}
+
+.container {
+    #container > .default;
+
+    &--decoration-highlight {
+        background-image: linear-gradient(90deg,fade(@c_yellow,1%) 12%,fade(@c_yellow,10%) 80%,fade(@c_yellow,0%));
+    }
+
+}
+
+
+
+body {
+    margin: unit(@gap/@base,rem) 0;
+    margin: var(--gap) 0;
+    background-image: 
+        linear-gradient(0deg, white 0%, white 40%, fade(white,50%) 41%, fade(white,0%) 100%),
+        url('@{img_path}pattern-roo-black-10.svg');
+    background-position:  
+        bottom left,
+        top left;
+    background-repeat: 
+        no-repeat,
+        repeat;
+    background-attachment: fixed;
+}

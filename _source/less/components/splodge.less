@@ -1,0 +1,58 @@
+.splodge {
+    min-width: unit(65/@base,rem);
+    min-height: unit(57/@base,rem);
+
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+
+    &__content {
+        #type > #font > .serif;
+        #type > #size > .h2;
+    }
+
+    @supports (mask: url()) {
+
+        mask: url('img/splodge.svg');
+        mask-size: cover;
+        
+        &--green { 
+            background-color: @c_green; 
+        }
+        &--green &__content {
+            color: contrast(@c_green,@c_grey_x-dark,white);
+        }
+
+        &--blue {
+            background-color: @c_blue;
+        }
+        &--blue &__content {
+            color: contrast(@c_blue,@c_grey_x-dark,white);
+        }
+
+        &--red {
+            background-color: @c_red;
+        }
+        &--red &__content {
+            color: contrast(@c_red,@c_grey_x-dark,white);
+        }
+
+        &--yellow {
+            background-color: @c_yellow;
+        }
+        &--yellow &__content {
+            color: contrast(@c_yellow,@c_grey_x-dark,white);
+        }
+
+        &--purple {
+            background-color: @c_purple;
+        }
+        &--purple &__content {
+            color: contrast(@c_purple,@c_grey_x-dark,white);
+        }
+
+    }
+
+    
+
+}

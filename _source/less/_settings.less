@@ -1,0 +1,60 @@
+//global base
+@base: 16;
+@fontbase: 18;
+
+//layout sizing:
+@gap: 20;
+@gap-rem: unit(@gap/@base,rem);
+
+//site sizing:
+@site-width: 1200;
+@break-max-rem: unit(@site-width/@base,rem);
+
+@break-min: 580;
+@break-min-rem: unit(@break-min/@base,rem);
+@break-mid: 820;
+@break-mid-rem: unit(@break-mid/@base,rem);
+
+//paths
+@img_path: 'images/img/';
+@font_path: 'fonts/';
+
+//colours
+@c_grey_light: #EFEFEF;
+@c_grey_med: #737373;
+@c_grey_dark: #505050;
+@c_grey_x-dark: #222;
+
+@c_green: #71CBAF;
+@c_green_light: #F0FAF7;
+
+@c_blue: #004ADB;
+@c_blue_light: #D7E2F9;
+
+@c_red: #E97055;
+@c_red_light: #F6DFDA;
+
+@c_yellow: #EDBB4A;
+@c_yellow_light: #FFEFCB;
+
+@c_purple: #9013FE;
+@c_purple_light: #FAF3FF;
+
+:root {
+    --gap: unit(15/@base,rem);
+    --base: @base;
+    --fontbase: 15;
+}
+
+.break-min({
+    :root {
+        --gap: unit(20/@base,rem);
+        --fontbase: @fontbase;
+    }
+});
+
+.break-mid({
+    :root {
+        --gap: @gap-rem;
+    }
+});

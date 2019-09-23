@@ -1,0 +1,90 @@
+.figure {
+
+    //default settings
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    figcaption {
+        #type > #size > .small;
+        &, a { color: @c_grey_med; }
+        margin-top: unit(12/@base,rem);
+        max-width: unit(561/@base,rem); 
+    }
+    &__images {
+        display: flex;
+        justify-content: center;
+        flex-flow: row;
+        align-items: center;
+    }
+
+    //gallery
+    &--gallery &__images {
+        display: grid;
+        grid-gap: @gap-rem;
+        grid-gap: var(--gap);
+        @min: unit(260/@base,rem);
+        grid-template-columns: repeat(auto-fit,minmax(@min,1fr));
+    }
+
+    //full
+    &--full &__images > img {
+        width: 100%;
+    }
+
+    //bleed
+    .break-mid({
+        &--bleed-start &__images,
+        &--bleed-end &__images {
+            width: ~"calc(100% + @{gap-rem})";
+            width: ~"calc(100% + var(--gap))";
+        }
+        &--bleed-start&--bleed-end &__images {
+            width: ~"calc(100% + (2 * @{gap-rem}))";
+            width: ~"calc(100% + (2 * var(--gap)))";
+        }
+        &--bleed-start &__images {
+            margin-left: -1 * @gap-rem;
+            margin-left: ~"calc(-1 * var(--gap))";
+        }
+        &--bleed-end &__images {
+            margin-right: -1 * @gap-rem;
+            margin-right: ~"calc(-1 * var(--gap))";
+        }
+    });
+
+    //stage
+    &--stage &__images {
+        padding: @gap-rem/2;
+        padding: ~"calc(var(--gap)/2)";
+        .break-min({
+            padding: @gap-rem;
+            padding: var(--gap);    
+        });
+        box-sizing: border-box;
+        background: @c_grey_x-dark url('@{img_path}pattern-roo-white-10.svg') top left repeat;
+    }
+    &--stage &__images > img {
+        background: white;
+        box-shadow: 0 0 10px black;
+    }
+
+    //colours
+    &--green &__images {
+        background-color: @c_green_light;
+    }
+    &--blue &__images {
+        background-color: @c_blue_light;
+    }
+    &--red &__images {
+        background-color: @c_red_light;
+    }
+    &--yellow &__images {
+        background-color: @c_yellow_light;
+    }
+    &--purple &__images {
+        background-color: @c_purple_light;
+    }
+
+
+}
