@@ -1,0 +1,45 @@
+.frame {
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &--laptop {
+    padding: 6%;
+    background-color: red;
+    background-image: 
+      url('@{img_path}laptop-top.png'),
+      url('@{img_path}laptop-bottom.png'),
+      url('@{img_path}laptop-sides.png');
+    background-position:
+      0 0,
+      0 100%,
+      0 10%;
+    background-size:
+      100% auto,
+      100%,
+      100%;
+    background-repeat: 
+      no-repeat,
+      no-repeat,
+      repeat-y;
+    > img {
+      outline: 5px solid #222;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 120%;
+      height: 6%;
+      left: -10%;
+      bottom: -0.5%;
+      background-image: url('@{img_path}laptop-keyboard.png');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+  }
+}

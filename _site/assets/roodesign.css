@@ -291,7 +291,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('images/img/splodge.svg') top left no-repeat;
+  background: url('images/css/splodge.svg') top left no-repeat;
   background-size: contain;
   top: -2.6875rem;
   left: 0;
@@ -653,7 +653,7 @@ body {
 body {
   margin: 1.25rem 0;
   margin: var(--gap) 0;
-  background-image: linear-gradient(0deg, white 0%, white 40%, rgba(255, 255, 255, 0.5) 41%, rgba(255, 255, 255, 0) 100%), url('images/img/pattern-roo-black-10.svg');
+  background-image: linear-gradient(0deg, white 0%, white 40%, rgba(255, 255, 255, 0.5) 41%, rgba(255, 255, 255, 0) 100%), url('images/css/pattern-roo-black-10.svg');
   background-position: bottom left,
         top left;
   background-repeat: no-repeat, repeat;
@@ -711,7 +711,7 @@ body {
   padding: 0.625rem;
   padding: calc(var(--gap)/2);
   box-sizing: border-box;
-  background: #222 url('images/img/pattern-roo-white-10.svg') top left repeat;
+  background: #222 url('images/css/pattern-roo-white-10.svg') top left repeat;
 }
 @media screen and (min-width: 36.25rem) {
   .figure--stage .figure__images {
@@ -838,7 +838,7 @@ body {
   position: absolute;
   top: -2.6875rem;
   left: 0;
-  background: url('images/img/quote-splodge.svg') top left no-repeat;
+  background: url('images/css/quote-splodge.svg') top left no-repeat;
   background-size: contain;
 }
 @media screen and (min-width: 75rem) {
@@ -901,6 +901,40 @@ body {
   font-size: 0.9375rem;
   line-height: 1.33333333;
   color: #737373;
+}
+.frame {
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.frame--laptop {
+  padding: 6%;
+  background-color: red;
+  background-image: url('images/css/laptop-top.png'), url('images/css/laptop-bottom.png'), url('images/css/laptop-sides.png');
+  background-position: 0 0,
+      0 100%,
+      0 10%;
+  background-size: 100% auto,
+      100%,
+      100%;
+  background-repeat: no-repeat, no-repeat, repeat-y;
+}
+.frame--laptop > img {
+  outline: 5px solid #222;
+}
+.frame--laptop:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 120%;
+  height: 6%;
+  left: -10%;
+  bottom: -0.5%;
+  background-image: url('images/css/laptop-keyboard.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .navigation {
   display: flex;
@@ -1086,7 +1120,7 @@ body {
 }
 .card__footer {
   border-top: 1px solid #EFEFEF;
-  background: url('images/img/pattern-roo-black-10.svg') top left repeat;
+  background: url('images/css/pattern-roo-black-10.svg') top left repeat;
   margin-top: auto;
 }
 .test {
