@@ -1,4 +1,4 @@
-const { src, dest, watch } = require('gulp')
+const { src, dest, watch, series } = require('gulp')
 const less = require('gulp-less')
 
 const compile_css = () => {
@@ -10,3 +10,4 @@ exports.default = (callback) => {
   watch('./_source/less/**/*.less', { ignoreInitial: false }, compile_css)
   callback()
 }
+exports.build = series(compile_css)

@@ -16,7 +16,8 @@
   "scripts": {
     "11ty": "npx @11ty/eleventy --serve",
     "gulp": "npx gulp",
-    "dev": "concurrently --kill-others \"npm run 11ty\" \"npm run gulp\""
+    "dev": "concurrently --kill-others \"npm run 11ty\" \"npm run gulp\"",
+    "build": "npx @11ty/eleventy && npx gulp build"
   },
   "repository": {
     "type": "git",
