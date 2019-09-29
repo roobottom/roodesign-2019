@@ -26,32 +26,26 @@
       outline: 5px solid #222;
     }
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 120%;
-      height: 6%;
-      left: -10%;
-      bottom: -0.5%;
-      background-image: url('@{img_path}laptop-keyboard.png');
-      background-position: 0 0;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    .break-min({
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 120%;
+        height: 6%;
+        left: -10%;
+        bottom: -0.5%;
+        background-image: url('@{img_path}laptop-keyboard.png');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    });
 
-  }
-
-  &--phones {
-    background-image: url('@{img_path}phone-middle.png');
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 100% 75%;
-    padding: 4%;
   }
 
   &--phone {
-    padding: 4%;
+    padding: 6%;
     background-image: 
       url('@{img_path}phone-top.png'),
       url('@{img_path}phone-bottom.png'),
@@ -71,7 +65,7 @@
     > img {
       box-sizing: border-box;
       border: 3px solid #222;
-      border-radius: 5%;
+      border-radius: 4%;
       overflow: hidden;
     }
 
@@ -87,6 +81,32 @@
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: contain;
+    }
+  }
+
+  &--tablet {
+    padding: 4% 12%;
+    background-image: 
+      url('@{img_path}tablet-top.png'),
+      url('@{img_path}tablet-bottom.png'),
+      url('@{img_path}tablet-middle.png');
+    background-position:
+      100% 0,
+      0 0,
+      50% 0;
+    background-size:
+      auto 100%,
+      auto 100%,
+      75% 100%;
+    background-repeat: 
+      no-repeat,
+      no-repeat,
+      no-repeat;
+    > img {
+      box-sizing: border-box;
+      border: 3px solid #222;
+      border-radius: 3%;
+      overflow: hidden;
     }
   }
 

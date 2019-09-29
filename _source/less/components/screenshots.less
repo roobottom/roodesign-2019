@@ -1,0 +1,97 @@
+.screenshots {
+
+  //define layouts for different devices
+  .phone-laptop() {
+    grid-template-columns: .3fr 1fr;
+  }
+  .phone-laptop-tablet() {
+    grid-template-columns: .3fr 1fr .7fr;
+  }
+  .laptop-tablet() {
+    grid-template-columns: 1fr .7fr;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  &__images {
+    display: grid;
+    grid-gap: 0;
+    align-items: end;
+  }
+  
+
+  &--phone-laptop-tablet &__images {
+    
+    .screenshot--phone,
+    .screenshot--tablet {
+      display: none;
+    }
+    .break-min({
+      .phone-laptop();
+      .screenshot--phone {
+        display: block;
+      }
+    });
+    .break-max({
+      .phone-laptop-tablet();
+      .screenshot--tablet {
+        display: block;
+      }
+    });
+  }
+
+  &--phone-laptop &__images {
+    
+    .screenshot--phone {
+      display: none;
+    }
+    .break-min({
+      .phone-laptop();
+      .sccrenshot--phone {
+        display: block;
+      }
+    });
+  }
+
+  &--laptop-tablet &__images {
+    
+    .screenshot--tablet {
+      display: none;
+    }
+    .break-min({
+      .laptop-tablet();
+      .screenshot--tablet {
+        display: block;
+      }
+    });
+  }
+
+  .break-mid({
+    .screenshot--phone {
+      margin-right: @gap-rem * -1;
+      margin-right: calc(-1 * var(--gap));
+      margin-bottom: @gap-rem * -1/2;
+      margin-bottom: calc(-1 * var(--gap)/2);
+      z-index: 2;
+    }
+
+    .screenshot--tablet {
+      margin-left: @gap-rem * -1;
+      margin-left: calc(-1 * var(--gap));
+      margin-bottom: @gap-rem * -1/2;
+      margin-bottom: calc(-1 * var(--gap)/2);
+    }
+  });
+
+  figcaption {  //has the class of grid. This is a hack until subgrid is supported.
+      #type > #size > .small;
+      &, a { color: @c_grey_med; }
+      margin-top: unit(24/@base,rem);
+  }
+
+  
+
+}

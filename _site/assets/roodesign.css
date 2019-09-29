@@ -738,18 +738,6 @@ body {
 .figure--purple .figure__images {
   background-color: #FAF3FF;
 }
-.figure--screenshots .figure__images > * {
-  grid-row: 1;
-}
-@media screen and (min-width: 51.25rem) {
-  .figure--screenshots .figure__images {
-    display: grid;
-    grid-gap: 1.25rem;
-    grid-gap: var(--gap);
-    grid-template-columns: 0.3fr 1fr 0.75fr;
-    align-items: end;
-  }
-}
 .button {
   border: 1px solid #222;
   padding: 0.625rem 1.25rem;
@@ -934,28 +922,23 @@ body {
 .frame--laptop > img {
   outline: 5px solid #222;
 }
-.frame--laptop:after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 120%;
-  height: 6%;
-  left: -10%;
-  bottom: -0.5%;
-  background-image: url('images/css/laptop-keyboard.png');
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.frame--phones {
-  background-image: url('images/css/phone-middle.png');
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 100% 75%;
-  padding: 4%;
+@media screen and (min-width: 36.25rem) {
+  .frame--laptop:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 120%;
+    height: 6%;
+    left: -10%;
+    bottom: -0.5%;
+    background-image: url('images/css/laptop-keyboard.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 .frame--phone {
-  padding: 4%;
+  padding: 6%;
   background-image: url('images/css/phone-top.png'), url('images/css/phone-bottom.png'), url('images/css/phone-middle.png');
   background-position: 0 0,
       0 100%,
@@ -968,7 +951,7 @@ body {
 .frame--phone > img {
   box-sizing: border-box;
   border: 3px solid #222;
-  border-radius: 5%;
+  border-radius: 4%;
   overflow: hidden;
 }
 .frame--phone:after {
@@ -983,6 +966,98 @@ body {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: contain;
+}
+.frame--tablet {
+  padding: 4% 12%;
+  background-image: url('images/css/tablet-top.png'), url('images/css/tablet-bottom.png'), url('images/css/tablet-middle.png');
+  background-position: 100% 0,
+      0 0,
+      50% 0;
+  background-size: auto 100%,
+      auto 100%,
+      75% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+}
+.frame--tablet > img {
+  box-sizing: border-box;
+  border: 3px solid #222;
+  border-radius: 3%;
+  overflow: hidden;
+}
+.screenshots img {
+  max-width: 100%;
+  display: block;
+}
+.screenshots__images {
+  display: grid;
+  grid-gap: 0;
+  align-items: end;
+}
+.screenshots--phone-laptop-tablet .screenshots__images .screenshot--phone,
+.screenshots--phone-laptop-tablet .screenshots__images .screenshot--tablet {
+  display: none;
+}
+@media screen and (min-width: 36.25rem) {
+  .screenshots--phone-laptop-tablet .screenshots__images {
+    grid-template-columns: 0.3fr 1fr;
+  }
+  .screenshots--phone-laptop-tablet .screenshots__images .screenshot--phone {
+    display: block;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .screenshots--phone-laptop-tablet .screenshots__images {
+    grid-template-columns: 0.3fr 1fr 0.7fr;
+  }
+  .screenshots--phone-laptop-tablet .screenshots__images .screenshot--tablet {
+    display: block;
+  }
+}
+.screenshots--phone-laptop .screenshots__images .screenshot--phone {
+  display: none;
+}
+@media screen and (min-width: 36.25rem) {
+  .screenshots--phone-laptop .screenshots__images {
+    grid-template-columns: 0.3fr 1fr;
+  }
+  .screenshots--phone-laptop .screenshots__images .sccrenshot--phone {
+    display: block;
+  }
+}
+.screenshots--laptop-tablet .screenshots__images .screenshot--tablet {
+  display: none;
+}
+@media screen and (min-width: 36.25rem) {
+  .screenshots--laptop-tablet .screenshots__images {
+    grid-template-columns: 1fr 0.7fr;
+  }
+  .screenshots--laptop-tablet .screenshots__images .screenshot--tablet {
+    display: block;
+  }
+}
+@media screen and (min-width: 51.25rem) {
+  .screenshots .screenshot--phone {
+    margin-right: -1.25rem;
+    margin-right: calc(-1 * var(--gap));
+    margin-bottom: -0.625rem;
+    margin-bottom: calc(-1 * var(--gap)/2);
+    z-index: 2;
+  }
+  .screenshots .screenshot--tablet {
+    margin-left: -1.25rem;
+    margin-left: calc(-1 * var(--gap));
+    margin-bottom: -0.625rem;
+    margin-bottom: calc(-1 * var(--gap)/2);
+  }
+}
+.screenshots figcaption {
+  font-size: 0.9375rem;
+  line-height: 1.33333333;
+  margin-top: 1.5rem;
+}
+.screenshots figcaption,
+.screenshots figcaption a {
+  color: #737373;
 }
 .navigation {
   display: flex;

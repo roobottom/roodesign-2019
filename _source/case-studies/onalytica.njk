@@ -23,6 +23,23 @@ images:
       - /assets/images/case-studies/onalytica/presentation/E.jpg
       - /assets/images/case-studies/onalytica/presentation/F.jpg
     caption: Some of the slides from a presentation on design process I gave to Onalytica's leadership team.
+  screenshots:
+    laptop: /assets/images/case-studies/onlaytica/onalytica-pattern-lib-laptop.jpg
+    tablet: /assets/images/case-studies/onlaytica/onalytica-pattern-lib-tablet.jpg
+    caption: The front-end pattern library empowers developers to create consistent UI — and enables rapid prototyping for testing with real users.
+outcomes:
+  -
+    title: A clearer design process
+    content: |
+      Design, technology and product — and critically senior leaders — have a much clearer idea of how to run a user-centred design process.
+  -
+    title: Better team alignment
+    content: |
+      By involving people from across the business in the design process, Onalytica's product team has increased understanding and buy-in from everyone.
+  -
+    title: A robust front-end pattern library
+    content: |
+      Onalytica's new pattern library serves as both the single source of truth for developers and as a test-bed for new interface ideas.
 ---
 {% import "../_includes/components.njk" as c %}
 {# define markdown sections #}
@@ -95,5 +112,28 @@ All the components compose together, so the pattern library can also be used to 
     {% call c.prose() %}
     {{ designCode }}
     {% endcall %}
+  </div>
+  <div class="grid grid--full">
+    {{ c.screenshots(
+        laptop=images.screenshots.laptop,
+        tablet=images.screenshots.tablet,
+        caption=images.screenshots.caption
+      ) }}
+  </div>
+</section>
+<section class="container space--grande container--decoration-highlight" id="Outcomes">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#outcomes">Outcomes</a></h2>
+  </div>
+  <div class="grid grid--thirds">
+    {{ c.outcomes(outcomes) }}
+  </div>
+</section>
+<section class="container space--grande">
+  <div class="grid grid--cinched">
+    {{ c.quote(
+      'Jon is a great communicator and steered us through the UX options and decisions to plan work effectively. We’re delighted with the results - both technically and creatively.',
+      'Andrew Macleod<br>CTO, Onalytica'
+    ) }}
   </div>
 </section>

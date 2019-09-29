@@ -23,7 +23,33 @@
     {%- endfor %}
   </div>
   {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
-  </figcaption>
+  </figure>
+{% endmacro %}
+
+{# screenshots #}
+{% macro screenshots(laptop, phone=null, tablet=null, caption) %}
+  {% if laptop and phone and tablet %}{% set type = "laptop-phone-tablet" %}{% endif %}
+  {% if laptop and phone and not tablet %}{% set type = "laptop-phone" %}{% endif %}
+  {% if laptop and tablet and not phone %}{% set type = "laptop-tablet" %}{% endif %}
+  {% if laptop and not tablet and not phone %}{% set type = "laptop" %}{% endif %}
+  <figure class="screenshots screenshots--{{ type }}">
+    <div class="screenshots__images">
+      {% if phone %}
+      <div class="frame frame--phone screenshot--phone">
+        <img src="{{ phone }}"/>
+      </div>
+      {% endif %}
+      <div class="frame frame--laptop screenshot--laptop">
+        <img src="{{ laptop }}"/>
+      </div>
+      {% if tablet %}
+      <div class="frame frame--tablet screenshot--tablet">
+        <img src="{{ tablet }}"/>
+      </div>
+      {% endif %}
+    </div>
+    {% if caption %}<figcaption class="grid grid--fat-thin"><p>{{ caption }}</p></figcaption>{% endif %}
+  </figure>
 {% endmacro %}
 
 {# prose #}
@@ -69,4 +95,18 @@
     <p>{{ cite | safe }}</p>
   </cite>
 </blockquote>
+{% endmacro %}
+
+{# outcomes #}
+{# outcomes: [{
+  title: string,
+  content: markdown
+}] #}
+{% macro outcomes(outcomes) %}
+  {% for outcome in outcomes %}
+    <article class="outcome prose">
+      <h3>{{ outcome.title }}</h3>
+      {% call prose() %}{{ outcome.content }}{% endcall %}
+    </article>
+  {% endfor %}
 {% endmacro %}
