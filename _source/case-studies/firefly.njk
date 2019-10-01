@@ -1,0 +1,33 @@
+---
+title: Leading design at Firefly
+date_start: 2014-09-01
+date_end: 2018-10-30
+roles:
+  - Design team leadership
+  - Hands-on design and code
+  - Management team
+color: red
+preface: |
+  For 4 years I led the design team at Firefly Learning. We helped thousands of teachers, students and parents to teach and learn from anywhere.
+images:
+  hero:
+    laptop: /assets/images/case-studies/firefly/hero-laptop.jpg
+    tablet: /assets/images/case-studies/firefly/hero-tablet.jpg
+    phone: /assets/images/case-studies/firefly/hero-phone.jpg
+    caption: |
+      Firefly connects teachers, students and parents. It allows them to manage their workloads, share content and set/submit homework. It's available on iOS and Android or in any web browser as a responsive web app.
+---
+{% import "../_includes/components.njk" as c %}
+{# define markdown sections #}
+
+{# render page #}
+<section class="container space--grande">
+  <div class="grid grid--full">
+    {{ c.screenshots(
+      laptop=images.hero.laptop,
+      tablet=images.hero.tablet,
+      phone=images.hero.phone,
+      caption=images.hero.caption
+    )}}
+  </div>
+</section>

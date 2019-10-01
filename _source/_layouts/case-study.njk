@@ -6,7 +6,7 @@
   </div>
   <div class="grid grid--fat-thin space--alto">
     <div class="prose prose--lead">
-      <p>{{ preface }}</p>
+      <p>{{ preface | md | safe }}</p>
     </div>
     <dl class="meta">
       <dt class="meta__title">Dates</dt>

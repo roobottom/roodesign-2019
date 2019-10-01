@@ -45,7 +45,7 @@
   }
 
   &--phone {
-    padding: 6%;
+    padding: 22% 8% 28% 8%;
     background-image: 
       url('@{img_path}phone-top.png'),
       url('@{img_path}phone-bottom.png'),
@@ -65,22 +65,8 @@
     > img {
       box-sizing: border-box;
       border: 3px solid #222;
-      border-radius: 4%;
+      border-radius: 8px;
       overflow: hidden;
-    }
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-image: url('@{img_path}phone-notch.png');
-      background-position: 0 0;
-      background-repeat: no-repeat;
-      background-size: contain;
     }
   }
 

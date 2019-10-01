@@ -77,9 +77,7 @@ All the components compose together, so the pattern library can also be used to 
     <h2 class="marker marker--number space--pico"><a href="#discovery">Discovery</a></h2>
   </div>
   <div class="grid grid--fat-thin">
-    {% call c.prose() %}
-    {{ discovery }}
-    {% endcall %}
+    {{ c.prose(discovery) }}
     {{ c.image(images.testing.url, images.testing.caption, ['bleed-start','bleed-end']) }}
   </div>
 </section>
@@ -88,9 +86,7 @@ All the components compose together, so the pattern library can also be used to 
     <h2 class="marker marker--number space--pico"><a href="#refining">Refining Onalytica's design process</a></h2>
   </div>
   <div class="grid grid--fat-thin">
-    {% call c.prose() %}
-    {{ refining }}
-    {% endcall %}
+    {{ c.prose(refining) }}
   </div>
   <div class="grid space--short">
     {{ c.gallery(images.slides.urls,images.slides.caption,['bleed-start','bleed-end','stage']) }}
@@ -109,9 +105,7 @@ All the components compose together, so the pattern library can also be used to 
     <h2 class="marker marker--number space--pico"><a href="#designCode">From design to code</a></h2>
   </div>
   <div class="grid grid--fat-thin space--short">
-    {% call c.prose() %}
-    {{ designCode }}
-    {% endcall %}
+    {{ c.prose(designCode) }}
   </div>
   <div class="grid grid--full">
     {{ c.screenshots(

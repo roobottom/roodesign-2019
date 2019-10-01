@@ -28,7 +28,7 @@
 
 {# screenshots #}
 {% macro screenshots(laptop, phone=null, tablet=null, caption) %}
-  {% if laptop and phone and tablet %}{% set type = "laptop-phone-tablet" %}{% endif %}
+  {% if laptop and phone and tablet %}{% set type = "phone-laptop-tablet" %}{% endif %}
   {% if laptop and phone and not tablet %}{% set type = "laptop-phone" %}{% endif %}
   {% if laptop and tablet and not phone %}{% set type = "laptop-tablet" %}{% endif %}
   {% if laptop and not tablet and not phone %}{% set type = "laptop" %}{% endif %}
@@ -53,9 +53,9 @@
 {% endmacro %}
 
 {# prose #}
-{% macro prose() %}
+{% macro prose(content) %}
   <div class="prose">
-  {% markdown %}{{ caller() }}{% endmarkdown %}
+  {{ content | md | safe }}
   </div>
 {% endmacro %}
 
@@ -71,12 +71,12 @@
 
   <div class="card__content">
     <h2 class="_title space--pico">{{ data.title }}</h2>
-    {% call prose() %}{{ data.content }}{% endcall %}
+    {{ prose(data.content) }}
   </div>
     
   {% if data.footer %}
   <footer class="card__footer">
-    {% call prose() %}{{ data.footer }}{% endcall %}
+    {{ prose(data.footer) }}
   </footer>
   {% endif %}
 
@@ -106,7 +106,7 @@
   {% for outcome in outcomes %}
     <article class="outcome prose">
       <h3>{{ outcome.title }}</h3>
-      {% call prose() %}{{ outcome.content }}{% endcall %}
+      {{ prose(outcome.content) }}
     </article>
   {% endfor %}
 {% endmacro %}

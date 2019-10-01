@@ -6,19 +6,14 @@ module.exports = function (config) {
 
   //general markdown options
   let options = {
-    typographer: true
+    typographer: true,
+    quotes: '“”‘’'
   }
   let md = markdownIt(options)
             .use(markdownItAttrs)
 
   //markdown for direct `.md` file processing
   config.setLibrary("md", md)
-
-
-  //markdown for in `njk` template processing
-  config.addPairedShortcode("markdown", function(content) {
-    return md.render(content)
-  })
 
   //today's date
   config.addShortcode("today", function (format="Do MMMM YYYY") {
@@ -28,6 +23,9 @@ module.exports = function (config) {
   //filters
   config.addFilter("date", function(value, format="Do MMMM YYYY") {
     return moment(value).format(format)
+  })
+  config.addFilter("md", function (content) {
+    return md.render(content)
   })
 
   //static files
