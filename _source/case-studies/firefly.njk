@@ -16,9 +16,30 @@ images:
     phone: /assets/images/case-studies/firefly/hero-phone.jpg
     caption: |
       Firefly connects teachers, students and parents. It allows them to manage their workloads, share content and set/submit homework. It's available on iOS and Android or in any web browser as a responsive web app.
+  unicorn:
+    url: /assets/images/case-studies/firefly/unicorn.svg
+    caption: |
+      Two Unicorn Diagrams. Left: UX Researcher. Right: UI Designer.
 ---
 {% import "../_includes/components.njk" as c %}
 {# define markdown sections #}
+{% set definingDesign %}
+The goal of the design team was to provide the absolute best experience for teachers, students and parents. We were responsible for what users saw on screen and how they interacted with our product. My challenge was to grow a team that delivered on the goal.
+
+By delineating skills we needed in the team, designers knew what was expected and how they could level-up. This also helped with our hiring — we could crystal-clear about who we needed.
+
+This also gave rise to the two distinct flavours of designer: The **UX Researcher** and the **UI Designer**.
+{% endset %}
+{% set definingDesign2 %}
+We used **Unicorn Diagrams** to express skill levels for each of the team. These were created by playing planning poker. Everyone rated levels per person as either "none", "beginner", "proficient" or "expert" (able to teach others).
+
+Then, we adjusted our scores based on group consensus. Judging skills like this meant that people were less likely to up/down-vote their abilities and led to greater trust in the team.
+
+In addition to core functions, I created add-on roles like the Design System Lead. These were assigned to those who showed a particular aptitude for that skill. It was their job to advocate best practice and for seeing everyone level-up in that area.
+{% endset %}
+{% set supportingDesigners %}
+
+{% endset %}
 
 {# render page #}
 <section class="container space--grande">
@@ -29,5 +50,19 @@ images:
       phone=images.hero.phone,
       caption=images.hero.caption
     )}}
+  </div>
+</section>
+<section class="container space--grande" id="definingDesign">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#definingDesign">Defining design</a></h2>
+  </div>
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(definingDesign) }}
+  </div>
+  <div class="grid grid--cinched space--short">
+    {{ c.image(images.unicorn.url, images.unicorn.caption, ['bleed-start','bleed-end','stage']) }} 
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(definingDesign2) }}
   </div>
 </section>

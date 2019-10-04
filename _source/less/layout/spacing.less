@@ -1,25 +1,46 @@
 #space {
-    .calc(@space:1) {
-        margin-bottom: unit(@gap * @space / @base, rem);
-        margin-bottom: ~"calc( var(--gap) * @{space} )";
+  .calc(@space:1) {
+      margin-bottom: unit(@gap * @space / @base, rem);
+      margin-bottom: ~"calc( var(--gap) * @{space} )";
+  }
+  .pico() { //1
+      @s: 14 / @gap;
+      #space > .calc(@s);
+  }
+  .short() { //2
+      #space > .calc();
+  }
+  .tall() { //3
+      #space > .calc(2);
+  }
+  .alto() { //4
+      #space > .calc(3);
+  }
+  .grande() { //5
+      #space > .calc(6)
+  }
+
+  //new spacing, Oct 2019
+  //based on GDS
+  .space(@amount) {
+    @result-old: unit(@gap * @amount / @base, rem);
+    @result-new: ~"calc( var(--gap) * @{amount})";
+  }
+
+  .space-output(@type, @direction, @counter: 1) when (@counter <= @space-limit) {
+    .space--@{type}-@{direction}-@{counter} {
+      @{type}-@{direction}: #space > .space(@counter)[@result-old];
+      @{type}-@{direction}: #space > .space(@counter)[@result-new];
     }
-    .pico() {
-        @s: 14 / @gap;
-        #space > .calc(@s);
-    }
-    .short() {
-        #space > .calc();
-    }
-    .tall() {
-        #space > .calc(2);
-    }
-    .alto() {
-        #space > .calc(3);
-    }
-    .grande() {
-        #space > .calc(6)
-    }
+    #space > .space-output(@type, @direction, @counter + 1);
+  }
+
 }
+
+#space > .space-output(margin,top);
+#space > .space-output(margin,bottom);
+#space > .space-output(margin,left);
+#space > .space-output(margin,right);
 
 .space--pico {
     #space > .pico;
