@@ -10,7 +10,7 @@
   <div class="figure__images">
     <img src="{{ url }}" class="image"{% if caption %} alt="{{ caption }}"{% endif %}>
   </div>
-  {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  {% if caption %}<figcaption>{{ caption | md | safe }}</figcaption>{% endif %}
   </figure>
 {% endmacro %}
 
@@ -22,7 +22,7 @@
     <img src="{{ url }}" class="image" {% if data.caption %} alt="{{ caption }} - {{ loop.index }} of {{ loop.length }} images"{% endif %}>
     {%- endfor %}
   </div>
-  {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
+  {% if caption %}<figcaption>{{ caption | md | safe }}</figcaption>{% endif %}
   </figure>
 {% endmacro %}
 
@@ -48,13 +48,13 @@
       </div>
       {% endif %}
     </div>
-    {% if caption %}<figcaption class="grid grid--fat-thin"><p>{{ caption }}</p></figcaption>{% endif %}
+    {% if caption %}<figcaption class="grid grid--fat-thin">{{ caption | md | safe }}</figcaption>{% endif %}
   </figure>
 {% endmacro %}
 
 {# prose #}
-{% macro prose(content) %}
-  <div class="prose">
+{% macro prose(content,classes) %}
+  <div class="prose{% for class in classes %} {{ class }}{% endfor %}">
   {{ content | md | safe }}
   </div>
 {% endmacro %}
@@ -90,9 +90,9 @@
 {# quote #}
 {% macro quote(content,cite) %}
 <blockquote class="quote">
-  <p>{{ content }}</p>
+  <p>{{ content | md | safe }}</p>
   <cite>
-    <p>{{ cite | safe }}</p>
+    <p>{{ cite | md | safe }}</p>
   </cite>
 </blockquote>
 {% endmacro %}

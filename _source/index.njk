@@ -1,0 +1,26 @@
+---
+layout: default.njk
+title: I help people put their creativity to work
+hero:
+  url: /assets/images/illustrations/fizzing-brain.png
+---
+{% import "./_includes/components.njk" as c %}
+{# set copy #}
+{% set introduction %}
+For the last 20 years, I've been designing apps and digital services. In that time, I've learned a great deal about how to create brilliant experiences.
+
+**Now I help others unleash their creative potential.** Whether you're an individual or large organisation: I help get your brain fizzing with ideas.
+{% endset %}
+
+<section class="container">
+  <div class="grid grid--split-halves">
+    <article id="introduction">
+      {{ c.prose(introduction) }}
+    </article>
+    {{ c.image(hero.url) }}
+  </div>
+  
+</section>
+
+
+[Find out how I can help you](/services){.button .space--margin-top-1}

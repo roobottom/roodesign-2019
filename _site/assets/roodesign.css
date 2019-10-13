@@ -9,11 +9,6 @@
     --fontbase: 18;
   }
 }
-@media screen and (min-width: 51.25rem) {
-  :root {
-    --gap: 1.25rem;
-  }
-}
 div,
 span,
 applet,
@@ -392,10 +387,10 @@ body {
   font-weight: bold;
 }
 .prose ul li {
-  list-style-image: url('img/bullet.svg');
+  list-style-image: url('images/css/bullet.svg');
 }
 .prose ul li li {
-  list-style-image: url('img/bullet-level-2.svg');
+  list-style-image: url('images/css/bullet-level-2.svg');
 }
 .prose ul li li li {
   list-style: square;
@@ -738,6 +733,7 @@ body {
         top left;
   background-repeat: no-repeat, repeat;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 .figure img {
   display: block;

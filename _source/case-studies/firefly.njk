@@ -20,6 +20,48 @@ images:
     url: /assets/images/case-studies/firefly/unicorn.svg
     caption: |
       Two Unicorn Diagrams. Left: UX Researcher. Right: UI Designer.
+  team:
+    url: /assets/images/case-studies/firefly/early-team.jpg
+    caption: |
+      Designers and founders back in 2014. Surely we were never that young?
+  bookshelves:
+    url: /assets/images/case-studies/firefly/codb1.jpg
+    caption: |
+      [Co-db](//www.co-db.uk/) created our awesome mobile bookshelves/whiteboards.
+  process:
+    url: /assets/images/case-studies/firefly/process.jpg
+    caption: |
+      The design process I created split work into two main phases, "what" and "how".
+  workshops:
+    url: /assets/images/case-studies/firefly/workshop.jpg
+    caption: |
+      People from all over the business got creative to solve tricky problems.
+  designSystem:
+    url: /assets/images/case-studies/firefly/patterns.png
+    caption: |
+      The *parts* and *patterns* structure of Firefly's design system make it easy to use.
+quotes:
+  rachel:
+    content: |
+      Jon's been a great leader from the beginning: approachable, open-minded and always willing to listen. I've always been able to trust him with my concerns, and he will either help me resolve it myself, or help me find someone who can!
+    cite: '[**Rachel Anderson**](//rachelandersondesign.co.uk), UI Designer'
+  joe:
+    content: |
+      Jon leaves a fantastic legacy — a great design team working together within a well-designed set of design systems and processes.
+    cite: '**Joe Mathewson**, founding partner of Firefly Learning'
+outcomes:
+  -
+    title: A customer centred approach to product design
+    content: |
+      Combine tools that accelerate design and a process that favours regular testing, and you have a potent recipe for success. <mark>Firefly enjoys a 97% customer retention rate</mark>. Part of what keeps schools coming back is ease of use and tools that solve genuine problems.
+  -
+    title: Happy designers
+    content: |
+      People who feel supported and valued produce better work. The proof is in the pudding —\_Firefly is a brilliant product designed by incredible people.
+  -
+    title: A model for the future
+    content: |
+      I'm proud of all I achieved at Firefly. The design team work seamlessly within the broader product team. Their tools and process set a great foundation as Firefly grows.
 ---
 {% import "../_includes/components.njk" as c %}
 {# define markdown sections #}
@@ -38,7 +80,70 @@ Then, we adjusted our scores based on group consensus. Judging skills like this 
 In addition to core functions, I created add-on roles like the Design System Lead. These were assigned to those who showed a particular aptitude for that skill. It was their job to advocate best practice and for seeing everyone level-up in that area.
 {% endset %}
 {% set supportingDesigners %}
+The responsibilities of a design leader are many and varied. But a big part of the job is making people feel valued and supported. I spent a large chunk of my week ensuring everyone could do their best work.
 
+### Safe spaces
+
+Building trust is vital for good work. That's why I dedicated myself to creating a weekly rhythm where meaningful conversations could happen.
+
+I found that one-to-ones were indispensable for a happy team. I held weekly hour-long sessions with everyone; a safe space with time to reflect, and flesh out ideas. People found these meetings valuable because I tailored them to the individual.
+
+Everyone also came together each week for a team meeting. This was a time where anyone could share and give feedback. We celebrated success and reflected on our struggles. Resources were recommended and battle stories swapped. A community was built.
+{% endset %}
+{% set supportingDesigners2 %}
+### Creative spaces
+
+Creating the right environment for good work is important too. I supported this to the best of my ability. Sometimes this could be as simple as providing sketching kits for every meeting space. Other times as complex as working with a custom fit-out company to create portable bookshelves. 
+
+Seven feet tall, our shelves allowed us to reconfigure space as needed. With storage on the front and whiteboards on the back, they made ideal walls whatever we were doing.
+{% endset %}
+{% set guidingDesign %}
+Getting designers, developers and product people working in sync is complicated. I worked with Firefly's cross-discipline teams to create a process that worked for all but could be modified per squad. 
+          
+It was specifically designed to work as the Discovery track of our Duel-Track Agile process. I followed several vital principals:
+
+* Designers must be able to fail as quickly as possible: Testing ideas cheaply and culling the weak.
+* Everyone must input into a user story. It should also become more defined over time.
+* Developers must be involved as early as possible. Too often they'd reject designs late on.
+{% endset %}
+{% set guidingDesign2 %}
+### What?
+
+We helped to define what we should build through user research and testing. UX Researchers owned this part of the process and split their time between:
+
+* **Generative research**: developing a deep understanding of our users and their needs to create innovative ideas of how Firefly could help them in-line with our mission and strategy ("why").
+* **Idea validation**: testing ideas with real users and their feasibility with internal teams.
+* **Feature validation**: at the end of the process, understanding the impact of recently shipped features on squad-level KPIs.
+
+### How?
+
+We created solutions to user stories through creative design and testing. UI Designers owned their part of the process and split their time between:
+
+* **Solution ideation**: create ingenious solutions to problems for teachers, parents and students through fail-fast, iterative design.
+* **Solution validation**: testing then iterating solutions with users via increasing fidelity prototypes.
+* **Solution feasibility**: working alongside product managers to ensure that solutions are technically feasible and align with business strategy.
+{% endset %}
+{% set designTools %}
+In addition to creating a standardised process, I led the team in using new tools and techniques that made us faster and more effective.
+
+### Workshops
+          
+I believe workshops are an essential part of any design process. At their best, workshops unlock untapped creativity, spark unexpected ideas and facilitate fast-failure.
+
+I encouraged collaboration through workshops for both generative ideation and idea validation. Whether informal sketching sessions or multi-day seminars, the aim was to get lots of ideas in the room. We brought together people from all over the business. We brought in our customers. All with the goal of quick sketching solutions.
+{% endset %}
+{% set designTools2 %}
+### Firefly's design system
+
+Early on, I introduced Sketch to replace Illustrator as our defacto screen design tool. Later I brought in tools like Zeplin to provide better specifications. We also used Abstract for file version control.
+
+I could see the potential of these tools wasn't fully realised. I started a project to create a pattern library. This later became a full design system, containing over 200 components and for the web, iOS and Android. 
+
+This accelerated output from the team but presented a problem. We now had a kit of predefined elements, but this threatened to kill invoative solutions. 
+
+I solved this obstacle by introducing a 2-step visual design process. In **Visual Discovery** designers were free to create whatever interface best answered the users' problem. Then, in **Visual Production**, this solution was translated to use existing components where possible. 
+
+Sometimes this created the need for new components. If that happened, we'd discuss as a team and introduce these where only absolutely necessary.
 {% endset %}
 
 {# render page #}
@@ -59,10 +164,64 @@ In addition to core functions, I created add-on roles like the Design System Lea
   <div class="grid grid--fat-thin space--short">
     {{ c.prose(definingDesign) }}
   </div>
-  <div class="grid grid--cinched space--short">
-    {{ c.image(images.unicorn.url, images.unicorn.caption, ['bleed-start','bleed-end','stage']) }} 
+  <div class="grid space--short">
+    {{ c.image(images.unicorn.url, images.unicorn.caption, ['bleed-start','stage']) }} 
   </div>
   <div class="grid grid--fat-thin">
     {{ c.prose(definingDesign2) }}
+  </div>
+</section>
+<section class="container space--grande" id="supportingDesigners">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#supportingDesigners">Supporting designers</a></h2>
+  </div>
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(supportingDesigners) }}
+    {{ c.image(images.team.url,images.team.caption,['bleed-start']) }}
+    {{ c.prose(supportingDesigners2) }}
+    {{ c.image(images.bookshelves.url,images.bookshelves.caption,['bleed-start']) }}
+  </div>
+</section>
+<section class="container space--grande">
+  <div class="grid grid--cinched">
+    {{ c.quote(quotes.rachel.content,quotes.rachel.cite) }}
+  </div>
+</section>
+<section class="container space--grande" id="guidingDesign">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#guidingDesign">Guiding design</a></h2>
+  </div>
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(guidingDesign) }}
+  </div>
+  <div class="grid space--tall">
+    {{ c.image(images.process.url,images.process.caption,['bleed-start','stage']) }}
+  </div>
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(guidingDesign2) }}
+  </div>
+</section>
+<section class="container space--grande" id="designTools">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#designTools">Design tools</a></h2>
+  </div>
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(designTools) }}
+    {{ c.image(images.workshops.url,images.workshops.caption,['bleed-start']) }}
+    {{ c.prose(designTools2) }}
+    {{ c.image(images.designSystem.url,images.designSystem.caption,['bleed-start']) }}
+  </div>
+</section>
+<section class="container space--grande container--decoration-highlight" id="outcomes">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#outcomes">Outcomes</a></h2>
+  </div>
+  <div class="grid grid--thirds">
+    {{ c.outcomes(outcomes) }}
+  </div>
+</section>
+<section class="container space--grande">
+  <div class="grid grid--cinched">
+    {{ c.quote(quotes.joe.content,quotes.joe.cite) }}
   </div>
 </section>

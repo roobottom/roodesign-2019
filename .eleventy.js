@@ -7,7 +7,8 @@ module.exports = function (config) {
   //general markdown options
   let options = {
     typographer: true,
-    quotes: '“”‘’'
+    quotes: '“”‘’',
+    html: true
   }
   let md = markdownIt(options)
             .use(markdownItAttrs)
