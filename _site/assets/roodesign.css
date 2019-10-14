@@ -215,7 +215,7 @@ h1 {
     line-height: 1.09090909;
   }
 }
-@media screen and (min-width: 51.25rem) {
+@media screen and (min-width: 43.125rem) {
   h1 {
     font-size: 3.875rem;
     line-height: 1.06451613;
@@ -528,7 +528,7 @@ body {
       grid-row: 2;
     }
   }
-  @media screen and (min-width: 51.25rem) {
+  @media screen and (min-width: 43.125rem) {
     .grid--cinched > * {
       grid-column: 1 / span 7;
     }
@@ -764,7 +764,7 @@ body {
 .figure--full .figure__images > img {
   width: 100%;
 }
-@media screen and (min-width: 51.25rem) {
+@media screen and (min-width: 43.125rem) {
   .figure--bleed-start .figure__images,
   .figure--bleed-end .figure__images {
     width: calc(100% + 1.25rem);
@@ -1221,7 +1221,7 @@ body {
   border: 1px dashed #EFEFEF;
   color: #737373;
 }
-@media screen and (min-width: 51.25rem) {
+@media screen and (min-width: 43.125rem) {
   .card--is-linked:hover {
     transform: scale(1.05);
   }
@@ -1325,4 +1325,14 @@ body {
 .page-styleguide .grid > * {
   min-height: 180px;
   outline: 1px solid green;
+}
+.homepage-hero {
+  max-width: 25rem;
+  justify-self: center;
+}
+@media screen and (min-width: 43.125rem) {
+  .homepage-hero {
+    margin-top: -6.25rem;
+    z-index: -1;
+  }
 }

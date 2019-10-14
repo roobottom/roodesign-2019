@@ -5,8 +5,8 @@
 * stage #}
 
 {# images #}
-{% macro image(url,caption,options) %}
-  <figure class="figure figure--single-image {% for option in options %}figure--{{ option }} {% endfor %}">
+{% macro image(url,caption,options,classes) %}
+  <figure class="figure figure--single-image {% for option in options %}figure--{{ option }} {% endfor %}{% for class in classes %} {{ class }}{% endfor %}">
   <div class="figure__images">
     <img src="{{ url }}" class="image"{% if caption %} alt="{{ caption }}"{% endif %}>
   </div>
@@ -109,4 +109,13 @@
       {{ prose(outcome.content) }}
     </article>
   {% endfor %}
+{% endmacro %}
+
+{# button #}
+{% macro button(title,url,showArrow=true,classes) %}
+  <a href="{{ url }}" class="button{% for class in classes %} {{ class }}{% endfor %}">
+    {{ title }}
+    {% if showArrow %}<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" class="icon icon--arrow">
+    <use xlink:href="/assets/images/icons.svg#icon-arrow"></use></svg>{% endif %}
+  </a>
 {% endmacro %}

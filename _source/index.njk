@@ -7,20 +7,18 @@ hero:
 {% import "./_includes/components.njk" as c %}
 {# set copy #}
 {% set introduction %}
-For the last 20 years, I've been designing apps and digital services. In that time, I've learned a great deal about how to create brilliant experiences.
+One good idea can transform a business from mediocre to extraordinary. Yet, many regard creativity as the preserve of artists and designers. I believe that anyone is capable of exceptional ideas — regardless of what job they do.
 
-**Now I help others unleash their creative potential.** Whether you're an individual or large organisation: I help get your brain fizzing with ideas.
+I help people unleash their creative potential, not by relying on unlikely "eureka" moments but through a systematic approach.  Unexpected ideas then become a natural output of the process.
 {% endset %}
 
 <section class="container">
-  <div class="grid grid--split-halves">
+  <div class="grid grid--showcase">
     <article id="introduction">
       {{ c.prose(introduction) }}
+      {{ c.button('Read case studies','/case-studies',classes=['space--margin-top-1']) }}
     </article>
-    {{ c.image(hero.url) }}
+    {{ c.image(url=hero.url,classes=['homepage-hero']) }}
   </div>
   
 </section>
-
-
-[Find out how I can help you](/services){.button .space--margin-top-1}
