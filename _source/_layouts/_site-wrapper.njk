@@ -1,3 +1,4 @@
+{% import "../_includes/components.njk" as c %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -8,6 +9,7 @@
     <meta name="description" content="Portfolio of Jon Roobottom, a designer from the UK">
     <title>{{ title }} / Roodesign</title>
     <link href="/assets/roodesign.css" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
     {% if headEnd %}
     {{ headEnd | safe }}
     {% endif %}
@@ -50,10 +52,10 @@
     <div class="footer__content">
         <p class="footer__copyright">&copy; 2001-{% today 'YYYY' %} <strong>Jon Roobottom</strong></p>     
         <ul class="footer__social">
-            <li><a href="https://github.com/roobottom" title="Jon Roobottom's Github profile">Github</a></li>
-            <li><a href="https://medium.com/@roobottom" title="Jon Roobottom's articles on Medium">Medium</a></li>
-            <li><a href="https://www.linkedin.com/in/roobottom/" title="Jon Roobottom's LinkedIn profile">Linkedin</a></li>
-            <li><a href="https://twitter.com/roobottom" title="Jon Roobottom's Twitter profile">Twitter</a></li>
+            <li><a href="https://github.com/roobottom" title="Jon Roobottom's Github profile">{{ c.icon('github') }}</a></li>
+            <li><a href="https://medium.com/@roobottom" title="Jon Roobottom's articles on Medium">{{ c.icon('medium') }}</a></li>
+            <li><a href="https://www.linkedin.com/in/roobottom/" title="Jon Roobottom's LinkedIn profile">{{ c.icon('linkedin') }}</a></li>
+            <li><a href="https://twitter.com/roobottom" title="Jon Roobottom's Twitter profile">{{ c.icon('twitter') }}</a></li>
         </ul>
     </div>
   </footer>

@@ -81,7 +81,7 @@
   {% endif %}
 
   {% if data.url %}
-      <a href="{{ data.url }}" class="card__cta">{{ data.cta }}</a>
+      <a href="{{ data.url }}" class="card__cta">{{ data.cta }} {{ icon('arrow') }}</a>
   {% endif %}
 
 </article>
@@ -115,7 +115,13 @@
 {% macro button(title,url,showArrow=true,classes) %}
   <a href="{{ url }}" class="button{% for class in classes %} {{ class }}{% endfor %}">
     {{ title }}
-    {% if showArrow %}<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" class="icon icon--arrow">
-    <use xlink:href="/assets/images/icons.svg#icon-arrow"></use></svg>{% endif %}
+    {% if showArrow %}{{ icon('arrow') }}{% endif %}
   </a>
+{% endmacro %}
+
+{# icons #}
+{% macro icon(name) %}
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" class="icon icon--{{ name }}">
+  <use xlink:href="/assets/images/icons.svg#icon-{{ name }}"></use>
+</svg>
 {% endmacro %}

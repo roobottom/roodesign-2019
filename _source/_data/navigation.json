@@ -1,14 +1,6 @@
 [
   {
-    "title": "What I do",
-    "url": "/services"
-  },
-  {
     "title": "Case studies",
     "url": "/case-studies"
-  },
-  {
-    "title": "About me",
-    "url": "/about-me"
   }
 ]
