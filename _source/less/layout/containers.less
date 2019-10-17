@@ -2,8 +2,8 @@
     .default() {
         margin-left: auto;
         margin-right: auto;
-        padding: 0 @gap-rem;
-        padding: 0 var(--gap);
+        padding: 0 (@gap-rem * 3);
+        padding: 0 calc(var(--gap) * 3);
         max-width: unit(@site-width/@base,rem);
     }
 }

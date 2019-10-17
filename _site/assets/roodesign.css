@@ -718,8 +718,8 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1.25rem;
-  padding: 0 var(--gap);
+  padding: 0 3.75rem;
+  padding: 0 calc(var(--gap) * 3);
   max-width: 75rem;
 }
 .container--decoration-highlight {
