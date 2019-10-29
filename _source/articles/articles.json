@@ -1,0 +1,3 @@
+{
+  "permalink": "articles/{{ date | date: 'Y' }}/{{ title }}/index.html"
+}
