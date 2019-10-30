@@ -1,0 +1,21 @@
+{% extends "./_site-wrapper.njk" %}
+
+{% block header %}
+  <div class="grid grid--cinched space--alto">
+    <h1 class="bleed--start">{{ title }}</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+<main class="container">
+  <div class="prose grid grid--article">
+    <dl class="meta">
+      <dt class="meta__title">Date</dt>
+      <dd class="meta__value space--pico"><p>{{ date | date("DD MMM YYYY") }}</p></dd>
+      <dt class="meta__title">Author</dt>
+      <dd class="meta__value space--pico">Jon Roobottom</dd>
+    </dl>
+    {{ content | safe }}
+</main>
+{% endblock %}
+      

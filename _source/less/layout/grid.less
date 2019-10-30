@@ -36,7 +36,8 @@
         }
         &--halves,
         &--split-halves,
-        &--showcase {
+        &--showcase,
+        &--prose {
             >* {
                 flex-basis: 45%;
                 margin-bottom: 0;
@@ -100,6 +101,7 @@
             }
         }
 
+
         
     }
     @media screen and (min-width: (@break-mid-rem)) {
@@ -132,6 +134,12 @@
             }
         }
 
+        .grid--prose {
+          >* {
+            grid-column: 2 / span 6;
+          }
+        }
+
         .grid--halves,
         .grid--split-halves {
             >*:nth-child(2n-1) {
@@ -150,6 +158,12 @@
             >* {
                 grid-column: 2 / span 7;
             }
+        }
+
+        .grid--prose {
+          > * {
+            grid-column: 3 / span 4;
+          }
         }
 
         .grid--full {

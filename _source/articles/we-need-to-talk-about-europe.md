@@ -1,9 +1,6 @@
 ---
 title: We need to talk about Europe
 date: 2016-07-01
-tags:
-  - politics
-  - europe
 ---
 
 Like many of my friends, I was shocked by the results of last weeks referendum about Britain's future in Europe. I spent the majority of the last week feeling angry, let down and increasingly lied-to, as more revelations about the leave campaign's plan, or lack of it, came to light. But, there's a kind of catharsis in writing, so I've decided to recount some of my thoughts about Brexit here, uninformed as they may be.

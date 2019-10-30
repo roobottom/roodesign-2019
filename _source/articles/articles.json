@@ -1,3 +1,5 @@
 {
-  "permalink": "articles/{{ date | date: 'Y' }}/{{ title }}/index.html"
+  "permalink": "articles/{{ date | date: 'Y' }}/{{ title | slug }}/index.html",
+  "tags": ["article"],
+  "layout": "article.njk"
 }
