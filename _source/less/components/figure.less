@@ -1,16 +1,33 @@
+#figure() {
+  .default {
+    //default settings
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    figcaption {
+        #type > #size > .small;
+        &, a { color: @c_grey_med; }
+        margin-top: unit(12/@base,rem);
+        max-width: unit(561/@base,rem); 
+    }
+  }
+  .stage() {
+    padding: @gap-rem/2;
+    padding: ~"calc(var(--gap)/2)";
+    .break-min({
+        padding: @gap-rem;
+        padding: var(--gap);    
+    });
+    box-sizing: border-box;
+    background: @c_grey_x-dark url('@{img_path}pattern-roo-white-10.svg') top left repeat;
+  }
+}
+
 .figure {
 
-  //default settings
-  img {
-      display: block;
-      max-width: 100%;
-  }
-  figcaption {
-      #type > #size > .small;
-      &, a { color: @c_grey_med; }
-      margin-top: unit(12/@base,rem);
-      max-width: unit(561/@base,rem); 
-  }
+  #figure > .default;
+  
   &__images {
       display: flex;
       justify-content: center;
@@ -55,14 +72,7 @@
 
   //stage
   &--stage &__images {
-      padding: @gap-rem/2;
-      padding: ~"calc(var(--gap)/2)";
-      .break-min({
-          padding: @gap-rem;
-          padding: var(--gap);    
-      });
-      box-sizing: border-box;
-      background: @c_grey_x-dark url('@{img_path}pattern-roo-white-10.svg') top left repeat;
+    #figure > .stage;
   }
   &--stage &__images > img {
       background: white;

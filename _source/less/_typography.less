@@ -213,6 +213,11 @@ body {
         display: inline-block;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     >ol>li,
     >ul>li {
         margin-left: 1em;
@@ -230,13 +235,18 @@ body {
         margin-top: unit(2/@base,rem);
     }
     p, ol, ul, h2, h3, h4, h5, h6, time {
-        margin-bottom: unit(@gap/2/@base,rem);
+        margin-bottom: unit(@gap/@base,rem);
     }
     p+h2, ul+h2, ol+h2,
     p+h3, ul+h3, ol+h3 {
         margin-top: unit(@gap*2/@base,rem);
         margin-top: calc(var(--gap) * 2);
     }
+    figure {
+      margin-bottom: unit(@gap*2/@base,rem);
+      margin-bottom: calc(var(--gap) * 2);
+    }
+
 
     
     //styling
@@ -304,6 +314,50 @@ body {
         border-radius: 1em 0;
         padding: 0 .35em;
         margin: 0 -.35em;
+    }
+
+    &--article {
+
+      figure {
+        #figure > .default;
+        >img.stage {
+          #figure > .stage;
+        }
+      }
+
+      .break-min({
+        figure {
+          grid-column: 1 / span 6;
+          margin-left: -1 * @gap-rem;
+          margin-left: ~"calc(-1 * var(--gap))";
+          >figcaption {
+            margin-left: @gap-rem;
+            margin-left: ~"var(--gap)";
+          }
+        }
+      });
+
+      //add auto layout to article prose
+      .break-mid({
+        display: grid;
+        grid-column-gap: unit(@gap * 2 / @base,rem);
+        grid-column-gap: ~"calc( var(--gap) * 2)"; 
+        grid-template-columns: repeat(6, 1fr);
+
+        > p, > ol, > ul,
+        h1, h2, h3, h4, h5, h6 {
+          grid-column: 1 / span 5;
+        }
+      });
+      .break-max({  
+        > p, > ol, > ul,
+        h1, h2, h3, h4, h5, h6 {
+          grid-column: 1 / span 4;
+        }
+        figure {
+          grid-column: 1 / span 5;
+        }
+      });
     }
 
 }

@@ -8,14 +8,15 @@
 
 {% block content %}
 <main class="container">
-  <div class="prose grid grid--article">
+  <div class="grid grid--thin-fat">
     <dl class="meta">
       <dt class="meta__title">Date</dt>
       <dd class="meta__value space--pico"><p>{{ date | date("DD MMM YYYY") }}</p></dd>
       <dt class="meta__title">Author</dt>
       <dd class="meta__value space--pico">Jon Roobottom</dd>
     </dl>
-    {{ content | safe }}
+    {{ c.prose(content,['prose--article']) }}
+  </div>
 </main>
 {% endblock %}
       

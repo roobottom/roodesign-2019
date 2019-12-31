@@ -1,5 +1,6 @@
 const markdownIt = require("markdown-it")
 const markdownItAttrs = require("markdown-it-attrs")
+const markdownItImplicitFigures = require('markdown-it-implicit-figures')
 const moment = require("moment")
 
 module.exports = function (config) {
@@ -12,6 +13,13 @@ module.exports = function (config) {
   }
   let md = markdownIt(options)
             .use(markdownItAttrs)
+            .use(markdownItImplicitFigures, {
+              dataType: false,  // <figure data-type="image">, default: false
+              figcaption: true,  // <figcaption>alternative text</figcaption>, default: false
+              tabindex: false, // <figure tabindex="1+n">..., default: false
+              link: false, // <a href="img.png"><img src="img.png"></a>, default: false,
+              copyAttrs: true
+            })
 
   //markdown for direct `.md` file processing
   config.setLibrary("md", md)
@@ -21,16 +29,19 @@ module.exports = function (config) {
     return moment().format(format)
   })
 
-  //filters
+  //format date
   config.addFilter("date", function(value, format="Do MMMM YYYY") {
     return moment(value).format(format)
   })
+
+  //render markdown
   config.addFilter("md", function (content) {
     return md.render(content)
   })
 
   //static files
   config.addPassthroughCopy("_source/assets")
+
 
   return {
     dir: {
