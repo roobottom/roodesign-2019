@@ -24,6 +24,9 @@ module.exports = function (config) {
   //markdown for direct `.md` file processing
   config.setLibrary("md", md)
 
+  //set deepmerge
+  config.setDataDeepMerge(true)
+
   //today's date
   config.addShortcode("today", function (format="Do MMMM YYYY") {
     return moment().format(format)
@@ -32,6 +35,11 @@ module.exports = function (config) {
   //format date
   config.addFilter("date", function(value, format="Do MMMM YYYY") {
     return moment(value).format(format)
+  })
+
+  //format dateslug
+  config.addFilter("dateslug", function (value) {
+    return moment(value).format("YYYY-MM-DD")
   })
 
   //render markdown

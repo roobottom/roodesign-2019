@@ -67,6 +67,14 @@
                 line-height: 34 / 19;
             });
         }
+        .compact() {
+          font-size: unit(16/@base,rem);
+          line-height: 20 / 16;
+          .break-min({
+              font-size: unit(19/@base,rem);
+              line-height: 23 / 19;
+          });
+        }
         .small() {
             font-size: unit(15/@base, rem); 
             line-height: 20 / 15;
@@ -100,6 +108,14 @@
             });
         }
         .h2() {
+            font-size: unit(26/@base,rem);
+            line-height: 30 / 26;
+            .break-min({
+                font-size: unit(34/@base,rem);
+                line-height: 38 / 34;
+            });
+        }
+        .h3() {
             font-size: unit(20/@base,rem);
             line-height: 24 / 20;
             .break-min({
@@ -117,14 +133,18 @@
 }
 
 //global type styles
-h1 {
+h1, .h1 {
     #type > #font > .serif;
     #type > #size > .h1;
     letter-spacing: -0.1px;
 }
 
-h2 {
+h2, .h2 {
     #type > #size > .h2;
+}
+
+h3, .h3 {
+  #type > #size > .h3;
 }
 
 body, input, textarea, button {
@@ -199,7 +219,7 @@ body {
 .prose {
 
     //sizing
-    p, ol, ul, h3, h4, h5, h6 {
+    p, ol, ul, h4, h5, h6 {
         #type > #size > .regular;
     }
     .lead,
