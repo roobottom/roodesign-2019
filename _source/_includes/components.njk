@@ -70,7 +70,14 @@
   {% endif %}
 
   <div class="card__content">
-    <h2 class="_title space--pico">{{ data.title }}</h2>
+    {% if data.headingSize %}
+      <{{ data.headingSize }} class="card__title space--pico">{{ data.title }}</{{ data.headingSize }}>
+    {% else %}
+    <h2 class="card__title space--pico">{{ data.title }}</h2>
+    {% endif %}
+    {% if data.date %}
+    <time class="card__date" datetime="{{ data.date }}">{{ data.date | date }}</time>
+    {% endif %}
     {{ prose(data.content) }}
   </div>
     
@@ -81,7 +88,7 @@
   {% endif %}
 
   {% if data.url %}
-      <a href="{{ data.url }}" class="card__cta">{{ data.cta }} {{ icon('arrow') }}</a>
+      <a href="{{ data.url }}" class="card__cta">{{ data.cta | safe }}{{ icon('arrow') }}</a>
   {% endif %}
 
 </article>

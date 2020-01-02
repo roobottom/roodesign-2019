@@ -63,10 +63,16 @@
     &__cover {
         padding: unit(@gap * 1.5 / @base,rem);
         padding: ~"var(--gap) calc( var(--gap) * 1.5)";
-        display: block;
+        //display: block;
     }
 
-    &__cover {
+    &__date { //date is a child of __content
+      #type > #size > .small;
+      display: block;
+    }
+
+    &__cover,
+    &__date {
       margin-bottom: @gap-rem;
       margin-bottom: var(--gap);
     }
@@ -82,14 +88,16 @@
     &.sm &__cover {
         padding: unit(@gap / @base,rem);
         padding: ~"var(--gap)";
-        display: block;
+        //display: block;
     }
 
     &__cta {
         color: @c_grey_x-dark;
-        #type > #size > .regular;
+        #type > #size > .compact;
+        line-height: 1;
         display: flex;
         align-items: center;
+        margin-top: auto;
 
         &:before {
             position: absolute;
@@ -103,6 +111,7 @@
 
         .icon {
             margin-left: unit(4/@base,rem);
+            flex: 0 0 auto;
         }
 
     }

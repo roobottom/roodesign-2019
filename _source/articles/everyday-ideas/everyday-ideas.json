@@ -1,0 +1,7 @@
+{
+  "permalink": "articles/everyday-ideas/{{ page.date | dateslug }}-{{ title | slug }}/index.html",
+  "tags": [
+    "everyday ideas"
+  ],
+  "layout": "article.njk"
+}

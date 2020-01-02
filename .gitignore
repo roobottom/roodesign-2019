@@ -3,4 +3,4 @@
 # Local Netlify folder
 .netlify
 /_source/upload.njk
-/_site/upload/index.html
+/_site
