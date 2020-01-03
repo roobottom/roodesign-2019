@@ -11,7 +11,7 @@ title: Articles
 </div>
 <div class="grid grid--thirds space--alto">
 {% set colour = cycler("green", "red", "blue", "purple", "yellow") %}
-{%- for article in collections['everyday ideas'] -%}
+{%- for article in collections['everyday ideas'] | reverse -%}
   {{ c.card({
     title: article.data.title,
     url: article.url,

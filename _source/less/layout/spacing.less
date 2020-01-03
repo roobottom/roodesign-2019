@@ -22,6 +22,7 @@
 
   //new spacing, Oct 2019
   //based on GDS
+  //use .space--{type}-{direction}-{amount[1-5]}
   .space(@amount) {
     @result-old: unit(@gap * @amount / @base, rem);
     @result-new: ~"calc( var(--gap) * @{amount})";
@@ -41,6 +42,11 @@
 #space > .space-output(margin,bottom);
 #space > .space-output(margin,left);
 #space > .space-output(margin,right);
+
+#space > .space-output(padding,top);
+#space > .space-output(padding,bottom);
+#space > .space-output(padding,left);
+#space > .space-output(padding,right);
 
 .space--pico {
     #space > .pico;

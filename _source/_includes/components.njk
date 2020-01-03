@@ -88,7 +88,7 @@
   {% endif %}
 
   {% if data.url %}
-      <a href="{{ data.url }}" class="card__cta">{{ data.cta | safe }}{{ icon('arrow') }}</a>
+      <a href="{{ data.url }}" class="card__cta"><span class="card__ctaLabel">{{ data.cta | safe }}</span>{{ icon('arrow') }}</a>
   {% endif %}
 
 </article>

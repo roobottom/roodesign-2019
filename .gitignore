@@ -4,3 +4,5 @@
 .netlify
 /_source/upload.njk
 /_site
+.env
+_cache/

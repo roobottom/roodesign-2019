@@ -1,5 +1,5 @@
 ---
-title: Everyday Ideas
+title: Welcome to Everyday Ideas
 date: 2020-01-01
 preface: I'm starting a new blog post series.
 ---
@@ -17,4 +17,3 @@ Like anything creative, rules help — so here's mine:
 2. Refine ideas: Revisit ideas multiple times when they warrant further exploration
 3. Don't get lost: Keep each post focused around one idea.
 4. Test with real people: Invite feedback.
-
