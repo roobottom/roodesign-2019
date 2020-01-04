@@ -1,0 +1,26 @@
+{% extends "./_site-wrapper.njk" %}
+
+{% block content %}
+<main class="container">
+  <div class="grid grid--thin-fat-wide">
+  <nav class="subnav" role="navigation" aria-label="Sub navigation">
+    <h2 class="h3 subnav__label">Styles</h2>
+    <ul class="subnav__list">
+      {% for page in collections['dsStyles'] %}
+      <li class="subnav__item"><a href="{{ page.url }}" class="subnav__link">{{ page.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <h2 class="h3 subnav__label">Components</h2>
+    <ul class="subnav__list">
+      {% for page in collections['dsComponents'] %}
+      <li class="subnav__item"><a href="{{ page.url }}" class="subnav__link">{{ page.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav> 
+  <div class="ds-content">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </div>
+</div>
+</main>
+{% endblock %}

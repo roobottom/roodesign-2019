@@ -50,6 +50,14 @@ module.exports = function (config) {
   //static files
   config.addPassthroughCopy("_source/assets")
 
+  //design system
+  config.addCollection("dsStyles", function(collection) {
+    return collection.getFilteredByGlob('_source/design-system/styles/*.njk')
+  })
+  config.addCollection("dsComponents", function(collection) {
+    return collection.getFilteredByGlob('_source/design-system/components/*.njk')
+  })
+
 
   return {
     dir: {
