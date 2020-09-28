@@ -78,7 +78,9 @@
     {% if data.date %}
     <time class="card__date" datetime="{{ data.date }}">{{ data.date | date }}</time>
     {% endif %}
-    {{ prose(data.content) }}
+    <div class="card__prose">
+      {{ data.content | safe }}
+    </div>
   </div>
     
   {% if data.footer %}

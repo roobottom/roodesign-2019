@@ -64,7 +64,7 @@
             line-height: 24 / 16;
             .break-min({
                 font-size: unit(19/@base,rem);
-                line-height: 34 / 19;
+                line-height: 31 / 19;
             });
         }
         .compact() {
@@ -238,6 +238,18 @@ body {
       display: block;
     }
 
+    //inline images
+    p>img {
+        float: left;
+        margin-right: unit(24/@base,rem);
+        margin-bottom: unit(24/@base,rem);
+        .break-min({
+            margin-right: unit(31/@base,rem);
+            margin-bottom: unit(31/@base,rem);
+            margin-left: unit(-31/@base,rem)
+        });
+    }
+
     >ol>li,
     >ul>li {
         margin-left: 1em;
@@ -388,7 +400,7 @@ body {
 
         > p, > ol, > ul,
         h1, h2, h3, h4, h5, h6,
-        blockquote {
+        blockquote, hr {
           grid-column: 1 / span 5;
         }
       });

@@ -3,24 +3,18 @@ layout: default.njk
 title: Articles
 ---
 {% import "./_includes/components.njk" as c %}
-<div class="grid grid--fat-thin space--short">
-  <div class="prose">
-    <h2>Everyday Ideas</h2>
-    <p class="lead">A collection of short posts on having ideas.</p>
-  </div>
-</div>
 <div class="grid grid--thirds space--alto">
 {% set colour = cycler("green", "red", "blue", "purple", "yellow") %}
-{%- for article in collections['everyday ideas'] | reverse -%}
+{%- for article in collections['articles'] | reverse -%}
   {{ c.card({
     title: article.data.title,
     url: article.url,
     content: article.data.preface or '',
-    cta: 'Read “<em>' + article.data.title + '</em>”',
+    cta: 'Keep reading',
+    ctaSupporting: article.data.title, 
     classes: 'sm',
     color: colour.next(),
-    headingSize: 'h3',
-    date: article.data.date
+    headingSize: 'h3'
   }) }}
 {%- endfor -%}
 </div>

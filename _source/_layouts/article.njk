@@ -14,6 +14,9 @@
 {% block header %}
   <div class="grid grid--cinched space--alto">
     <h1 class="bleed--start">{{ title }}</h1>
+    {% if preface %}<div class="prose prose--lead">
+      <p>{{ preface }}</p>
+      </div>{% endif %}
   </div>
 {% endblock %}
 
