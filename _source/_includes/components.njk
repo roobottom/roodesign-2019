@@ -65,7 +65,7 @@
   
   {% if data.cover %}
   <header class="card__cover">
-    {# {{ partial:components/figure :figure_images="cover" figure_classes="figure--bleed-start figure--{color}" }} #}
+    <img src="{{ data.cover }}" aria-hidden="true"/>
   </header>
   {% endif %}
 

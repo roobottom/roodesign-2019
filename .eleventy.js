@@ -50,6 +50,13 @@ module.exports = function (config) {
   //static files
   config.addPassthroughCopy("_source/assets")
 
+  //case studies
+  config.addCollection("case-study", function(collection) {
+    return articles = collection.getFilteredByGlob(["./_source/case-studies/*.njk"]).sort( function(a, b) {
+      return b.date - a.date
+    })
+  })
+
   //design system
   config.addCollection("dsStyles", function(collection) {
     return collection.getFilteredByGlob('_source/design-system/styles/*.njk')
