@@ -128,6 +128,15 @@
         .link() {
             color: @c_grey_x-dark;
             text-decoration: underline;
+            &:hover {
+                color: darken(@c_grey_x-dark, 10%);
+            }
+            &:focus {
+                outline: 3px solid transparent;
+                background-color: lighten(@c_yellow, 20%);
+                box-shadow: 0 -2px lighten(@c_yellow, 20%), 0 4px @c_grey_x-dark;
+                text-decoration: none;
+            }
         }
     }
 }
@@ -215,6 +224,10 @@ body {
     }
 }
 
+.footnotes-sep {
+    display: none;
+}
+
 //prose type styles
 .prose {
 
@@ -266,7 +279,7 @@ body {
     li + li {
         margin-top: unit(2/@base,rem);
     }
-    p, ol, ul, h2, h3, h4, h5, h6, time {
+    p, ol, ul, h2, h3, h4, h5, h6, time, pre {
         margin-bottom: unit(@gap/@base,rem);
     }
     p+h2, ul+h2, ol+h2,
@@ -298,6 +311,16 @@ body {
     ol li li li {list-style-type: lower-roman;}
 
     li li { margin-left: 1em; }
+
+    figure {
+        img.screenshot {
+            box-shadow: 0 0 10px fade(black,10%);
+        }
+    }
+
+    abbr {
+        border-bottom: 1px dotted;
+    }
     
     //tables
     table {
@@ -327,17 +350,29 @@ body {
     //code
     code {
         font-family: 'Fira Code', monospace;
-        font-size: 87%;
+        font-size: 1rem;
     }
-
 
     p>code,
     li>code {
         padding: 0 unit(3/@base,rem);
         margin: 0 unit(-3/@base,rem);
+    }
+
+
+    p>code,
+    li>code,
+    pre { 
         background-color: fade(black,5%);
         border-radius: unit(6/@base,rem);
         border: 1px solid fade(black,7%);
+    }
+
+    //code blocks
+    pre > code {
+        display: block;
+        padding: var(--gap);
+        overflow-x: scroll;
     }
 
     //mark (highlight)
@@ -357,6 +392,7 @@ body {
           #figure > .stage;
         }
       }
+      
       blockquote { 
         padding-left: 1.5*@gap-rem;
         margin-left: @gap-rem;
@@ -377,6 +413,7 @@ body {
         > p { font-style: italic; }
 
       }
+      
 
       .break-min({
         figure {
@@ -387,6 +424,11 @@ body {
             margin-left: @gap-rem;
             margin-left: ~"var(--gap)";
           }
+        }
+        .gallery-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--gap);
         }
       });
 
@@ -400,7 +442,7 @@ body {
 
         > p, > ol, > ul,
         h1, h2, h3, h4, h5, h6,
-        blockquote, hr {
+        blockquote, hr, .footnotes, .gallery, pre {
           grid-column: 1 / span 5;
         }
       });
