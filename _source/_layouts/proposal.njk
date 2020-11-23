@@ -1,0 +1,18 @@
+{% extends "./_site-wrapper-simple.njk" %}
+
+{% block header %}
+  <div class="grid grid--cinched space--alto">
+      <h1 class="bleed--start">{{ title }}</h1>
+      {% if preface %}
+      <div class="prose--lead">
+        {{ preface | md | safe }}
+      </div>
+      {% endif %}
+  </div>
+{% endblock %}
+
+{% block content %}
+<main class="container">
+  {{ content | safe }}
+</main>
+{% endblock %}
