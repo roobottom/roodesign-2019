@@ -1,0 +1,75 @@
+---
+title: Dauntsey's School
+date_start: 2012-04-25
+date_end: 2012-07-25
+date: 2012-07-25
+roles:
+  - Web design
+  - Web development
+colour: blue
+cta: Experience Dauntsey's
+preface: I created an engaging site for a prestigious school in the heart of Wiltshire
+---
+{% import "../_includes/components.njk" as c %}
+
+{# content #}
+{% set intro %}
+Set in the heart of an idyllic 100-acre estate in Wiltshire and dating back to 1542; Dauntsey's is quintessentially British school. I led the creation of a new **responsive website** designed to reflect the school's long heritage, academic excellence and welcoming atmosphere.
+{% endset %}
+
+{% set modern %}
+## Traditional _yet_ modern
+
+The challenge was to deliver a website that looked fresh enough to attract a modern audience but still communicated the deep history and values of the school.
+
+I worked with the school to work through different versions of the homepage. Some were too plain, too modern or too stuffy. Eventually, we arrived a refined balance.
+{% endset %}
+
+{% set joliebrise %}
+## Two websites, one theme
+
+Dauntsey's Sailing Club is home to the Jolie Brise — a 22-meter pilot cutter. Owned, sailed and maintained by Dauntsey's pupils this iconic piece of British sailing history demanded a standalone website.
+
+I used the same visual language and template layouts for both Dauntsey's and The Jolie Brise sites. Not only did this immediately connect the two, but also reduced the learning curve for content editors.
+{% endset %}
+
+{% set outcomes %}
+## Outcomes
+
+I designed and developed two new, responsive websites that were easily editable with the Firefly CMS.
+{% endset %}
+
+{# render page #}
+<section class="space--grande">
+  <div class="grid grid--full">
+    {{ c.screenshots(
+      laptop='/assets/images/work/dauntseys/hero-desktop.png',
+      phone='/assets/images/work/dauntseys/hero-mobile.png'
+    )}}
+  </div>
+</section>
+<section class="space--grande">
+  <div class="grid grid--fat-thin space--grande">
+    {{ c.prose(intro) }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(modern) }}
+  </div>
+  <div class="grid space--grande">
+    {{ c.gallery([
+      '/assets/images/work/dauntseys/homepage-v2.png',
+      '/assets/images/work/dauntseys/homepage-v3.png',
+      '/assets/images/work/dauntseys/homepage-v4.png'
+    ],
+    "The micro-evolutions of Dauntsey's homepage",
+    ['bleed-start','bleed-end','stage']) 
+    }}
+  </div>
+  <div class="grid grid--fat-thin space--grande">
+    {{ c.prose(joliebrise) }}
+    {{ c.image('/assets/images/work/dauntseys/jolie-brise-homepage.png', 'The Jolie Brise website used the same feel as the main site with its own twist', ['bleed-start', 'bleed-end', 'shadow'])}}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(outcomes) }}
+  </div> 
+</section>

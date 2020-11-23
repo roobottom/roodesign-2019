@@ -61,6 +61,12 @@ module.exports = function (config) {
     })
   })
 
+  config.addCollection("work", function(collection) {
+    return collection.getFilteredByGlob(["./_source/work/*.njk"]).sort( function(a, b) {
+      return b.date - a.date
+    })
+  })
+
   //design system
   config.addCollection("dsStyles", function(collection) {
     return collection.getFilteredByGlob('_source/design-system/styles/*.njk')

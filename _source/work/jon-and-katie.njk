@@ -1,0 +1,36 @@
+---
+title: Wedding design
+date_start: 2009-08-28
+date_end: 2010-09-28
+date: 2010-09-28
+roles:
+  - Graphic design
+  - Website design
+  - Website development
+colour: blue
+cta: ''
+preface: On the 28 August 2010 I married an amazing girl called Katie.
+---
+{% set introduction %}
+## Pixel people are doing it for themselves
+Having been inspired by  [Cable's brilliant wedding designs](http://www.cabel.name/2008/10/on-wedding-design.html) and being a massive fan of [eBoy](http://hello.eboy.com/eboy/), I couldn't resist creating a pixel version of me and katie. 
+
+Pixels became a touchstone of the entire wedding-brand project. I created pixel-art versions of sunflowers (Katie's favourites), 
+{% endset %}
+{% import "../_includes/components.njk" as c %}
+<section class="space--grande">
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(introduction) }}
+    {{ c.image('/assets/images/work/jon-and-katie/pixelJonAndKatie.png','Katie and I as pixel people',['bleed-start']) }}
+  </div>
+  <div class="grid space--short">
+    {{ c.gallery([
+      '/assets/images/work/jon-and-katie/jonandkatie-savethedates.jpg',
+      '/assets/images/work/jon-and-katie/jonandkatie-invite.jpg',
+      '/assets/images/work/jon-and-katie/jonandkatie-badges.jpg'
+    ],
+    'caption',
+    ['bleed-start','bleed-end','stage']) 
+    }}
+  </div>
+</section>

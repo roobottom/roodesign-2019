@@ -1,0 +1,101 @@
+---
+title: The British International School, Cairo
+date_start: 2013-03-01
+date_end: 2013-07-01
+date: 2013-07-01
+roles:
+  - Web design
+  - Web development
+colour: blue
+cta: 'Step into an Egyptian school'
+preface: I helped connect a unique school with busy parents with a fast-loading, responsive website.
+---
+{% import "../_includes/components.njk" as c %}
+
+{# content #}
+{% set intro %}
+I was excited to lead the design and development of a new website for the **British International School in Cairo**. This fabulous institution is a celebration of multiculturalism; their British sensibility juxtaposed with Egyptian hospitality.
+{% endset %}
+
+{% set throth %}
+## Breathing new life into an ancient deity
+
+Sometimes it’s the case with busy schools that they don’t have much in terms of brand visuals and assets. We found it particularly challenging to work with the current version of their emblem depicting the ancient Egyptian god, Throth.
+
+Of course, with a school as fantastic as BISC we wanted to help them out. We created an updated, modern version of Throth as a responsive SVG that gave us the flexibility on the web. We also provided a new, simplified set of standardised brand guidelines that the school could use beyond the web.
+{% endset %}
+
+{% set lookandfeel %}
+## Developing a look-and-feel
+
+Using an approach called [style tiles](http://styletil.es/) I worked through several different versions of the look-and-feel for the new site. This technique allowed me to work-up ideas quickly and get agreement from the client more easily than mocking up full pages.
+
+With any design, I find that it’s relativity easy to create something good; taking about 20% of the overall work. The hard part is getting from good to great. This is where style tiles really come into their own: getting to the great much quicker. 
+{% endset %}
+
+{% set parents %}
+## For parents on the go
+
+Testing told us that around a third of visitors were accessing BISC’s existing site on their phones. With a further fifth using tablet-like devices it was clear **we had to deliver a great experience for all visitors, no matter what device they used.**
+
+We also knew that mobile networks in Egypt were sometimes unreliable, so we needed to build a site that would work even when connection speeds were low. With a **budget of 300 kb per page**; each page would have to be useable before any enhancements were loaded. 
+
+This **progessive enhancement** approach of loading the content first and deferring things like photographs and animations until later worked brilliantly. Loading the site on a poor connection was lightening quick and meant parents could find relevant information even if they were experiencing network issues.
+{% endset %}
+
+{% set outcomes %}
+## Outcomes
+
+BISC enjoyed a beautiful new, fast-loading website that they could edit with Firefly's brilliant WYSIWYG editor. Using Style Tiles we'd quickly agreed the visual style and our progressive enhancement approach meant the site was super responsive. 
+{% endset %}
+
+{# render page #}
+<section class="space--grande">
+  <div class="grid grid--full">
+    {{ c.screenshots(
+      laptop='/assets/images/work/bisc/bisc-hero.png',
+      phone='/assets/images/work/bisc/bisc-mobile-top.png'
+    )}}
+  </div>
+</section>
+<section class="space--grande">
+  <div class="grid grid--fat-thin space--grande">
+    {{ c.prose(intro) }}
+  </div>
+  <div class="grid grid--fat-thin space--grande">
+    {{ c.prose(throth) }}
+    {{ c.image('/assets/images/work/bisc/throth.svg','Creating a SVG version of the Throth emblem allowed us reuse one small file and change colour elements on-the-fly with CSS. Illustration by the brilliant [Aegir](//aegir.org).',['bleed-start','bleed-end']) }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(lookandfeel) }}
+  </div>
+  <div class="grid space--grande">
+    {{ c.image('/assets/images/work/bisc/bisc-style-tiles.png','An early set of style tiles I developed that helped get buy-in from the client.',['bleed-start','bleed-end','shadow']) }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(parents) }}
+  </div>
+  <div class="grid space--grande">
+    {{ c.gallery([
+      '/assets/images/work/bisc/bisc-mobile-top.png',
+      '/assets/images/work/bisc/bisc-mobile-bottom.png',
+      '/assets/images/work/bisc/bisc-mobile-top-menu.png'
+    ],
+    'When the page first loads, tapping *main menu* simply jumps the user to the footer menu. Later a script switches this to show an animated menu at the side of the screen.',
+    ['bleed-start','bleed-end','shadow']) 
+    }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(outcomes) }}
+  </div>
+  <div class="grid space--grande">
+    {{ c.gallery([
+      '/assets/images/work/bisc/bisc-homepage.jpg',
+      '/assets/images/work/bisc/bisc-innerpage.jpg',
+      '/assets/images/work/bisc/bisc-news.jpg'
+    ],
+    'The homepage, an inner page and news page from the British International School in Cairo\'s website',
+    ['bleed-start','bleed-end','stage']) 
+    }}
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+title: Same Boat Music website
+date_start: 2018-12-01
+date_end: 2019-04-01
+date: 2019-04-01
+roles:
+  - HTML, CSS and Javascript development
+  - Shopify development
+colour: blue
+cta: 'Jump into the boat'
+preface: I developed a custom Shopify template for [Same Boat Music](https://sameboatmusic.com/).
+---
+{% import "../_includes/components.njk" as c %}
+{% set content %}
+Alongside <a href="http://sling.agency/">Sling.agency</a> I created a custom Shopify template
+{% endset %}
+{% import "../_includes/components.njk" as c %}
+<section class="space--grande">
+  <div class="grid grid--full">
+    {{ c.screenshots(
+      laptop='/assets/images/work/same-boat-music/homepage.png',
+      tablet='/assets/images/work/same-boat-music/nativity.png',
+      phone='/assets/images/work/same-boat-music/song.png'
+    )}}
+  </div>
+</section>
+<section class="space--grande">
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(content) }}
+  </div>
+</section>
