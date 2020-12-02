@@ -5,9 +5,9 @@
 * stage #}
 
 {# images #}
-{% macro image(url,caption,options,classes) %}
-  <figure class="figure figure--single-image {% for option in options %}figure--{{ option }} {% endfor %}{% for class in classes %} {{ class }}{% endfor %}">
-  <div class="figure__images">
+{% macro image(url,caption,classes,frame) %}
+  <figure class="figure figure--single-image {% for class in classes %}figure--{{ class }} {% endfor %}">
+  <div class="figure__images {% if frame %}frame frame--{{ frame }}{% endif %}">
     <img src="{{ url }}" class="image"{% if caption %} alt="{{ caption }}"{% endif %}>
   </div>
   {% if caption %}<figcaption>{{ caption | md | safe }}</figcaption>{% endif %}
@@ -71,9 +71,9 @@
 
   <div class="card__content">
     {% if data.headingSize %}
-      <{{ data.headingSize }} class="card__title space--pico">{{ data.title }}</{{ data.headingSize }}>
+      <{{ data.headingSize }} class="card__title space--pico {{ data.headingClass }}">{{ data.title }}</{{ data.headingSize }}>
     {% else %}
-    <h2 class="card__title space--pico">{{ data.title }}</h2>
+    <h2 class="card__title space--pico {{ data.headingClass }}">{{ data.title }}</h2>
     {% endif %}
     {% if data.date %}
     <time class="card__date" datetime="{{ data.date }}">{{ data.date | date }}</time>
@@ -126,6 +126,15 @@
     {{ title }}
     {% if showArrow %}{{ icon('arrow') }}{% endif %}
   </a>
+{% endmacro %}
+
+{# buttons #}
+{% macro buttons(buttons, classes) %}
+  <div class="buttons {% for class in classes %}buttons--{{ class }} {% endfor %}">
+    {% for data in buttons %}
+      {{ button(data.title, data.url, data.showArrow, data.classes) }}
+    {% endfor %}
+  </div>
 {% endmacro %}
 
 {# icons #}

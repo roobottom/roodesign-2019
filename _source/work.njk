@@ -3,14 +3,16 @@ layout: default.njk
 title: Work
 ---
 {% import "./_includes/components.njk" as c %}
-<div class="grid grid--thirds space--alto">
+
+<div class="grid grid--thirds">
 {%- for study in collections['work'] -%}
   {{ c.card({
     title: study.data.title,
     url: study.url,
     cta: study.data.cta,
     color: study.data.color,
-    cover: study.data.cover
+    cover: study.data.cover,
+    headingSize: 'h3'
   }) }}
 {%- endfor -%}
 </div>

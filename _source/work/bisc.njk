@@ -6,7 +6,8 @@ date: 2013-07-01
 roles:
   - Web design
   - Web development
-colour: blue
+color: purple
+cover: /assets/images/work/bisc/bisc-cover.png
 cta: 'Step into an Egyptian school'
 preface: I helped connect a unique school with busy parents with a fast-loading, responsive website.
 ---
@@ -72,18 +73,9 @@ BISC enjoyed a beautiful new, fast-loading website that they could edit with Fir
   <div class="grid space--grande">
     {{ c.image('/assets/images/work/bisc/bisc-style-tiles.png','An early set of style tiles I developed that helped get buy-in from the client.',['bleed-start','bleed-end','shadow']) }}
   </div>
-  <div class="grid grid--fat-thin">
+  <div class="grid grid--fat-thin space--grande">
     {{ c.prose(parents) }}
-  </div>
-  <div class="grid space--grande">
-    {{ c.gallery([
-      '/assets/images/work/bisc/bisc-mobile-top.png',
-      '/assets/images/work/bisc/bisc-mobile-bottom.png',
-      '/assets/images/work/bisc/bisc-mobile-top-menu.png'
-    ],
-    'When the page first loads, tapping *main menu* simply jumps the user to the footer menu. Later a script switches this to show an animated menu at the side of the screen.',
-    ['bleed-start','bleed-end','shadow']) 
-    }}
+    {{ c.image('/assets/images/work/bisc/bisc-mobile-top-menu.png', 'When the page first loads, tapping *main menu* simply jumps the user to the footer menu. Later a script switches this to show an animated menu at the side of the screen.', [], 'phone') }}
   </div>
   <div class="grid grid--fat-thin">
     {{ c.prose(outcomes) }}
@@ -94,8 +86,8 @@ BISC enjoyed a beautiful new, fast-loading website that they could edit with Fir
       '/assets/images/work/bisc/bisc-innerpage.jpg',
       '/assets/images/work/bisc/bisc-news.jpg'
     ],
-    'The homepage, an inner page and news page from the British International School in Cairo\'s website',
-    ['bleed-start','bleed-end','stage']) 
+    'The homepage, an inner page and news page from the British International School in Cairo’s website',
+    ['bleed-start','stage']) 
     }}
   </div>
 </section>

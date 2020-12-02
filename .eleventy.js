@@ -51,6 +51,11 @@ module.exports = function (config) {
     return md.render(content)
   })
 
+  //spread
+  config.addFilter("spread", function (obj) {
+    return {...obj}
+  })
+
   //static files
   config.addPassthroughCopy("_source/assets")
 

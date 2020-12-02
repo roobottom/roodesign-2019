@@ -1,0 +1,78 @@
+---
+title: Claire Jones Handmade
+date_start: 2011-08-01
+date_end: 2012-02-01
+date: 2011-08-01
+roles:
+  - Brand design
+  - Web design
+  - Web development
+color: green
+cta: 'Get creative with Claire'
+cover: /assets/images/work/claire-jones/claire-jones-cover.png
+preface: I helped Claire Jones sell her beautiful handmade items online with a fresh brand and Shopify e-commerce website.
+---
+{% import "../_includes/components.njk" as c %}
+
+{# content #}
+{% set intro %}
+## Brand design
+Claire makes beautiful handmade gifts & home-wares from reclaimed material. She wanted a brand that would reflect the personality of unique items and a website where she could sell them.
+
+Claire's creations, like her, are charmingly quirky. I wanted to bring out her personality in the brand look-and-feel. Handmade meant hand-drawn—so that's where I started. Claire also wanted to put her logo on all sorts of handmade gifts, so needed something robust. I created a quirky logo that would work in any colour and at any size. 
+{% endset %}
+
+{% set inuse %}
+## The brand in use
+
+I created a whole host of branded items for Claire to give her maximum flexibility when branding her handmade gifts. This included super-sticky vinyl stickers, business cards and a bespoke ink-and-pad stamp. 
+{% endset %}
+
+{% set website %}
+## A Shopify e-commerce website
+
+Claire was selling her handmade gifts at local craft markets but wanted to supplement this income by selling online. We chose Shopify as I could completely customise the look-and-feel of the shop and Claire had a robust and secure system to support her as she grew her business. 
+{% endset %}
+{# render page #}
+
+<section class="space--grande">
+  <div class="grid grid--fat-thin">
+    {{ c.prose(intro) }}
+  </div>
+  <div class="grid space--grande">
+    {{ c.gallery(
+      [
+        '/assets/images/work/claire-jones/logo-a.png',
+        '/assets/images/work/claire-jones/logo-b.png',
+        '/assets/images/work/claire-jones/logo-c.png',
+        '/assets/images/work/claire-jones/logo-d.png',
+        '/assets/images/work/claire-jones/logo-f.png'
+      ],
+      'Claire’s logo is quirky yet functional. It works at any size and in any colour. Claire can bend it to her will to fit in with whatever she creates. Essential when you make gifts with reclaimed materials.',
+      ['bleed-start', 'bleed-end', 'single-row']
+    ) }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(inuse) }}
+  </div>
+  <div class="grid space--grande">
+    {{ c.gallery(
+      [
+        '/assets/images/work/claire-jones/cj-stickers.jpg',
+        '/assets/images/work/claire-jones/cj-cards.jpg'
+      ],
+      'The brand in use on vinyl stickers and Claire’s business cards.',
+      ['bleed-start', 'bleed-end', 'stage']
+    ) }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(website) }}
+  </div>
+  <div class="grid">
+    {{ c.screenshots(
+      laptop='/assets/images/work/claire-jones/cj-homepage.jpg',
+      phone='/assets/images/work/claire-jones/cj-mobile.jpg',
+      caption='Claire’s website, has a bespoke look and feel built on the rock-solid foundation of Shopify.'
+    )}}
+  </div>
+</section>

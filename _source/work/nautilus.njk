@@ -1,0 +1,90 @@
+---
+title: Nautilus
+date_start: 2015-01-30
+date_end: 2015-08-30
+date: 2015-08-30
+roles:
+  - Web design
+  - Web development
+color: yellow
+cover: /assets/images/work/nautilus/nautilus-cover.png
+cta: 'Explore Nautilus'
+preface: I designed and developed a new theme for the Firefly learning platform
+---
+{% import "../_includes/components.njk" as c %}
+
+{# content #}
+{% set intro %}
+## The spirit of the old
+
+The classic Firefly theme "Blue" was a firm favourite amongst teachers, so I had a challenge on my hands to convince them that my updated successor was as good.  
+
+I started with [Style Tiles](//styletil.es) — a technique to quickly iterate through ideas and get to the great ones rapidly.  I shared these around the office and with those teachers kind enough to give me their opinions. 
+{% endset %}
+
+{% set earlyDesigns %}
+## Early design
+
+Once I had a handle on the overall look-and-feel, I translated this into full-page mock-ups for the significant areas in Firefly.  
+
+Mocking-up full pages in Sketch allowed me to "stress test" the design before starting the more labour intensive work of creating HTML and CSS. I could quickly see what worked, what didn't and get more feedback from the all-important teachers
+{% endset %}
+
+{% set prototype %}
+## HTML prototype
+
+Unlike a website, Firefly isn't a curated collection of content — it's a tool that teachers use in a myriad of ways. By creating a click-through prototype before building a full-blown Firefly theme, I could quickly test all kinds of content and make adjustments to ensure that Nautilus looked great — whatever teachers threw at it! 
+
+### Explore the prototype
+
+{{ c.buttons(
+  [
+    {title:'The dashboard', url:'https://ff-nautilus.netlify.app/dashboard.html'},
+    {title: 'A content page', url: 'https://ff-nautilus.netlify.app/'},
+    {title: 'Components styleguide', url: 'https://ff-nautilus.netlify.app/widgets.html'}
+  ],
+['crazy']
+) }}
+{% endset %}
+
+{% set custom %}
+## A standard theme; a customised experience
+
+A big challenge that we wanted to address with Nautilus was customisation. Plenty of schools wanted to inject their branding into Firefly, and we'd obliged by developing custom CSS for Blue. Some intrepid teachers had even started hacking Blue's markup and styles themselves. 
+
+All these custom modifications meant that each time schools upgraded to the latest version of Firefly, *something* inevitably broke. Nautilus was our first theme to offer our "smart-rebrand" technology; meaning schools could provide two key-colours and a logo, and the theme _automagically_ adjusts by using tones of those colours throughout — seamlessly matching the brand of the school.
+
+No more broken customisations; just beautiful, simple branding for every school.
+{% endset %}
+
+{# render page #}
+<section class="space--grande">
+  <div class="grid grid--fat-thin">
+    {{ c.prose(intro) }}
+  </div>
+  <div class="grid space--grande">
+    {{ c.image('/assets/images/work/nautilus/style-tiles.png','A set of style tiles I created',['bleed-start','bleed-end','stage']) }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(earlyDesigns) }}
+  </div>
+  <div class="grid space--grande">
+    {{ c.image('/assets/images/work/nautilus/early-desktop.png','Early full-page explorations for Nautilus',['bleed-start','bleed-end','stage']) }}
+  </div>
+  <div class="grid grid--fat-thin space--grande">
+    {{ c.prose(prototype) }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(custom) }}
+  </div>
+  <div class="grid">
+    {{ c.gallery(
+      [
+        '/assets/images/work/nautilus/nautilus.png',
+        '/assets/images/work/nautilus/nautlius-alternative.png'
+      ],
+      'By adding two colours and a logo, Nautilus automatically adjusts to reflect the brand of individual schools',
+      ['bleed-start']
+    ) }}
+  </div>
+</section>

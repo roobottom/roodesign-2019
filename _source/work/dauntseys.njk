@@ -1,13 +1,14 @@
 ---
-title: Dauntsey's School
+title: Dauntsey’s School
 date_start: 2012-04-25
 date_end: 2012-07-25
 date: 2012-07-25
 roles:
   - Web design
   - Web development
-colour: blue
+color: blue
 cta: Experience Dauntsey's
+cover: /assets/images/work/dauntseys/dauntseys-cover.png
 preface: I created an engaging site for a prestigious school in the heart of Wiltshire
 ---
 {% import "../_includes/components.njk" as c %}
@@ -33,12 +34,6 @@ Dauntsey's Sailing Club is home to the Jolie Brise — a 22-meter pilot cutter. 
 I used the same visual language and template layouts for both Dauntsey's and The Jolie Brise sites. Not only did this immediately connect the two, but also reduced the learning curve for content editors.
 {% endset %}
 
-{% set outcomes %}
-## Outcomes
-
-I designed and developed two new, responsive websites that were easily editable with the Firefly CMS.
-{% endset %}
-
 {# render page #}
 <section class="space--grande">
   <div class="grid grid--full">
@@ -62,14 +57,11 @@ I designed and developed two new, responsive websites that were easily editable 
       '/assets/images/work/dauntseys/homepage-v4.png'
     ],
     "The micro-evolutions of Dauntsey's homepage",
-    ['bleed-start','bleed-end','stage']) 
+    ['bleed-start','stage']) 
     }}
   </div>
   <div class="grid grid--fat-thin space--grande">
     {{ c.prose(joliebrise) }}
-    {{ c.image('/assets/images/work/dauntseys/jolie-brise-homepage.png', 'The Jolie Brise website used the same feel as the main site with its own twist', ['bleed-start', 'bleed-end', 'shadow'])}}
+    {{ c.image('/assets/images/work/dauntseys/jolie-brise-homepage.png', 'The Jolie Brise website used the same feel as the main site with its own twist', ['bleed-start', 'shadow'])}}
   </div>
-  <div class="grid grid--fat-thin">
-    {{ c.prose(outcomes) }}
-  </div> 
 </section>
