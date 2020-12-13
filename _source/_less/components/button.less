@@ -22,3 +22,32 @@
     }
 
 }
+
+//buttons wrapper
+.buttons {
+    display: flex;
+    > .button {
+        flex: 1 0 auto;
+        margin: unit(@gap / @base, rem);
+    }
+
+
+    &--crazy > .button:nth-of-type(5n-4) {
+        transform: rotate(-2deg);
+        &:hover {
+            transform: rotate(2deg);
+        }
+    }
+    &--crazy > .button:nth-of-type(5n-3) {
+        transform: rotate(1deg);
+        &:hover {
+            transform: rotate(-2deg);
+        }
+    }
+    &--crazy > .button:nth-of-type(5n-2) {
+        transform: rotate(-3deg);
+        &:hover {
+            transform: rotate(1deg);
+        }
+    }
+}

@@ -1,5 +1,5 @@
 ---
-title: Helping tax payers when they’re due a refund
+title: Helping taxpayers when they’re due a refund
 date_start: 2019-04-18
 date_end: 2019-11-01
 date: 2019-11-01
@@ -12,108 +12,180 @@ roles:
 color: yellow
 cover: /assets/images/case-studies/vat-repayment-tracker/vrt-cover.png
 cta: 'See how I helped the tax payer'
-preface: I helped HMRC to better serve the UK citizen by designing a service that lets tax payers track VAT repayments
-images:
-  discovery:
-    url: /assets/images/case-studies/vat-repayment-tracker/wall-of-knowledge.jpeg
-    caption: |
-      Kathy (User Researcher), Louise (Content Designer) and I discuss the day’s findings at the “wall of knowledge”
-  blueprint:
-    url: /assets/images/case-studies/vat-repayment-tracker/service-blueprint.jpg
-    caption: |
-      I created this service blueprint that mapped the journey for the user and their interactions with HMRC staff and software. We used this to quickly identify pain-points and opportunities for improvement. 
-  ideasWorkshop:
-    url: /assets/images/case-studies/vat-repayment-tracker/ideas-workshop.jpeg
-    caption: |
-      People from various teams discuss the problems around tracking VAT repayments in an ideas workshop I ran
-  ideasWorkshopOutput:
-    url: /assets/images/case-studies/vat-repayment-tracker/workshop-ideas.jpg
-    caption: We got a whole array of ideas from our "How might we" workshop
+preface: I helped HMRC to better serve the taxpayer by designing a service to track VAT repayments online.
 ---
 {% import "../_includes/components.njk" as c %}
-{# define markdown sections #}
-{% set theproblem %}
-When a VAT repayment gets delayed, it can spell disaster for business as predicting cash flow is vital. Understandably, people want to know when they'll get their money.
 
-In 2018, HMRC had no online service to allow people to track their repayments. 50,000 people called the VAT helpline asking "where's my money?"; this cost around £1M in telephone support. 
+{% set inAHurry %}
+This case study will take you around ten minutes to read. Here's a summary if you don't have the time.
 
-To further complicate things, if a user hadn't supplied bank details, HMRC had to send a cheque. This cost an extra £1.7M per year. The business objective, naturally, was to reduce these costs.
-
-I was part of a team who designed and built a new service that let users check their repayments anytime. 
+I worked with a government digital team to help taxpayers better understand when they'd receive a VAT repayment. Users got a better experience and HMRC saved money. You can [skip to the outcomes](#outcomes) to learn more.
 {% endset %}
+<section class="space--grande" id="in-a-hurry">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#in-a-hurry">In a hurry?</a></h2>
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose(inAHurry) }}
+  </div>
+</section>
 
-{% set discovery %}
-All UK government digital projects start with the discovery phase. The goal is to understand the problem holistically. User needs, internal processes, potential constraints and government policy are all taken into consideration.
+{% set theProblem %}
+When a VAT repayment is delayed, it can spell disaster for business as predicting cash flow is vital. Understandably, people want to know when they'll get their money.
 
-When a company submits a VAT return, it triggers a complex set of interactions between the user, employees and software. To understand this journey, we set about creating a service map. 
+In 2018, HMRC had no online service to allow people to track their repayments. 50,000 people called the VAT helpline asking "where's my money?". To further complicate things, if a user hadn't supplied bank details, HMRC had to send a cheque. Combined, telephone support and cheques cost HMRC around £1M a year. The business objective, naturally, was to reduce these costs.
 
-This was a significant challenge. For example, understating why a repayment might be delayed was tricky. The vetting process for repayments is a closely guarded secret. It's done on a case-by-case basis, and fraud can be a problem. Rightly so, HMRC didn't want to give away anything that might make it easier to cheat the system. 
-
-Mapping the service took serval weeks. At our daily standups, we gradually filled-in puzzle pieces on our "wall of knowledge". 
-
-### User needs
-Speaking with users, we found that for the majority, the repayments service was working well. But for the ~20% who had a problem tracking a repayment often meant confusion and multiple calls. These were the users for whom we needed to improve the service.
-
-Even those people having a good experience were confused about how they'd be paid. Users thought that setting up a Direct Debit meant that repayments would be sent back to the same account. This isn't true, people have to provide a "repayment account". Without one, HMRC would send a cheque.
-
-Our researcher, Kathy, was now able to define some specific user needs:
-
-*   tell users _how_ they'd get their repayment
-*   tell users _when_ they'd get their repayment.
-*   tell users _about_ any delay and inform them how to fix it
-*   tell users _if_ HMRC had used repayments to offset other debt
-*   tell users _when_ HMRC had sent repayment
-
-### Pain points and opportunities
-I translated all our findings into a service blueprint.
-
-We ran a small internal workshop to identify pain-points and opportunities. By reviewing the blueprint and user needs, we were able to rapidly spot areas for improvement. 
-
-We now had a clear idea of the problems facing HMRC staff _and_ end-users. 
+I was part of a team who designed and built a new service that let users check their repayments anytime.
 {% endset %}
-
-{% set alpha %}
-In alpha, we started to rough-out solutions and to test them with users and HMRC staff.
-
-### Idea generation
-I ran an *idea generation workshop*. By inviting a mix of people who were and weren't familiar with the project from various areas of the business, I hoped to get a wide array of ideas and perspectives around two questions:
-
-* How might we make calling HMRC the last thing people think of when worrying about their VAT repayments?
-* How might we make a repayment by cheque a thing of the past?
-{% endset %}
-
-{# render the page #}
 <section class="space--grande" id="the-problem">
   <div class="grid">
     <h2 class="marker marker--number space--pico"><a href="#the-problem">The problem</a></h2>
   </div>
   <div class="grid grid--fat-thin">
-    {{ c.prose(theproblem) }}
+    {{ c.prose(theProblem) }}
   </div>
 </section>
+
+{% set discovery %}
+In the [Discovery phase](https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works), we:
+
+* interviewed users to find out how they track repayments;
+* chatted with HMRC staff to understand the end-to-end repayments process;
+* ran workshops to identify the problems and places for improvement.
+
+When a company submits a VAT return, it triggers a complex set of interactions between the user, employees and software. To understand this journey, we set about creating a service map. 
+
+This was a significant challenge; VAT is complex, involving many people and processes. There isn't just one VAT team, so we spent a lot of our time trying to find out who could answer our questions. 
+
+For example, understating why a repayment might be delayed was particularly tricky. The vetting process for repayments is a closely guarded secret. It's done on a case-by-case basis, and fraud can be a problem. Naturally, HMRC didn't want to give away anything that might make it easier to cheat the system. 
+
+Mapping the service took weeks. At our daily standups, we slowly filled-in the process on our "wall of knowledge". 
+{% endset %}
+{% set gettingToKnowOurUsers %}
+### Getting to know our users
+
+Speaking with users, we found that for the majority, the repayments service was working well. But for the ~15% who had a problem tracking a repayment often meant confusion and multiple calls. These were the people for whom we needed to improve the service.
+
+Furthermore, even those having a good experience were confused about how they'd be paid. For example, users thought that setting up a Direct Debit meant that repayments would be sent back to the same account. This isn't true, people have to provide a "repayment account". Without one, HMRC would send a cheque.
+
+Our user researcher, Kathy, created a set of user needs:
+
+* tell users how they'd get their repayment;
+* notify users when they'd get their repayment;
+* tell users about any delay and inform them how to fix it;
+* tell users if HMRC had used repayments to offset other debt;
+* notify users when HMRC had sent repayment.
+{% endset %}
+
+{% set routesIn %}
+### Routes in
+
+When expecting a VAT repayment, most people simply wait for the money to arrive in their account. It's only when this goes wrong they start looking for help. People did this in an unexpected number of ways. In fact, uncovering the routes in was quite the challenge. It was well worth the effort, though, as it revealed alternatives to building a digital service, namely:
+
+1. Building an API to allow third-party software vendors to provide tracking information in their MTD enabled software;
+1. Improve the automated phone assistant to give tracking information;
+1. Improving various other user touch-points, such as letters and online guidance;
+1. Extending the current Business Tax Account service to show repayment-tracking.
+{% endset %}
+
+{% set painPoints %}
+### Pain points and opportunities
+
+I translated all our findings into an "as-is" service blueprint. This allowed us to identify pain-points and opportunities by comparing the blueprint against the user needs. We were then able to rapidly spot areas for improvement. 
+{% endset %}
 
 <section class="space--grande" id="discovery">
   <div class="grid">
     <h2 class="marker marker--number space--pico"><a href="#discovery">Discovery</a></h2>
   </div>
-  <div class="grid grid--fat-thin">
+  <div class="grid grid--fat-thin space--alto">
     {{ c.prose(discovery) }}
-    {{ c.image(images.discovery.url,images.discovery.caption,['bleed-start']) }}
+    {{ c.image('/assets/images/case-studies/vat-repayment-tracker/wall-of-knowledge.jpg','I discuss the puzzle of VAT repayments with Kathy (user researcher) and Louise (content designer).',['bleed-start']) }}
   </div>
-  <div class="grid space--short">
-    {{ c.image(images.blueprint.url, images.blueprint.caption, ['bleed-start','stage']) }} 
+  <div class="grid grid--fat-thin space--alto">
+    {{ c.prose(gettingToKnowOurUsers) }}
+  </div>
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(routesIn) }}
+  </div>
+  <div class="grid grid--fat-thin space--alto">
+    {{ c.image('/assets/images/case-studies/vat-repayment-tracker/routes-in.jpg','Typically there are multiple ways that users access government services; tracking a VAT repayment was no exception.',['bleed-start','shadow']) }}
+  </div>
+  <div class="grid grid--fat-thin space--short">
+    {{ c.prose(painPoints) }}
+  </div>
+  <div class="grid space--alto">
+    {{ c.image('/assets/images/case-studies/vat-repayment-tracker/service-blueprint.png','The service blueprint of VAT repayments. Some elements have been deliberately blurred.',['bleed-start','shadow']) }}
   </div>
 </section>
+
+{% set alpha %}
+In the [Alpha phase](https://www.gov.uk/service-manual/agile-delivery/how-the-alpha-phase-works), we:
+
+* "went wide" by generating as many ideas as possible;
+* got buy-in from the business for our general approach;
+* worked with other teams to improve the parts of the process we didn't have direct control over;
+* and, built and tested some prototypes
+{% endset %}
+
+{% set goingWide %}
+### Going wide
+We now had a clearer understanding of the existing process and the problems facing our users. It was time to "go wide" to create as many ideas as possible. I usually like to involve as many people in this part as possible. By engaging with a big group who have familiarity with different elements of the service, you often end up with unexpected solutions. 
+
+For this project, I ran an ideas workshop with stakeholders from HMRC and other designs from the digital centre. We focused on two, deceptively simple-looking questions:
+
+* How might we make calling HMRC the last thing people think of when worrying about their VAT repayments?
+* How might we make a repayment by cheque a thing of the past?
+
+This is always my favourite part of the design process: Working with people who wouldn't call themselves creative and seeing them come up with ingenious ideas.  Having other designers in a workshop is excellent, but involve others who actually work on the thing you're trying to improve, and you've got magic!
+{% endset %}
+
+{% set businessBuyIn %}
+### Buy-in from the business
+
+In HMRC Digital, we work alongside other parts of the revenue—what we loving refer to as "the business". There's naturally a lot of red-tape in government, and solutions can be narrowed early. So we needed to get buy-in before we did any serious testing with users. I put together some options in Sketch. The intention was to demonstrate a general direction to the business.
+{% endset %}
+{% set simpleTracker %}
+#### The simple tracker
+
+They say lead with your weakest idea. Or, in our case, the one you don't want to be approved. This solution, we felt, would offer some reassurance but not enough to prevent calls to the helpline. But it was cheaper to develop, and we knew that cost was a factor. 
+{% endset %}
+
+{% set integratedTracker %}
+#### The integrated tracker
+
+In some ways, this solution would have made a lot of sense. We proposed that we allowed users to track repayments directly as part of their VAT account dashboard. 
+
+The integrated tracker was never going to fly as it meant we'd have to hand the work over to another team. When cost centres have more sway than user need all you can do is roll with the punches, but it's a shame when business structure imposes itself on the UX. 
+{% endset %}
 
 <section class="space--grande" id="alpha">
   <div class="grid">
     <h2 class="marker marker--number space--pico"><a href="#alpha">Alpha</a></h2>
   </div>
-  <div class="grid grid--fat-thin">
+  <div class="grid grid--fat-thin space--alto">
     {{ c.prose(alpha) }}
-    {{ c.image(images.ideasWorkshop.url,images.ideasWorkshop.caption,['bleed-start']) }}
   </div>
-  <div class="grid space--short">
-    {{ c.image(images.ideasWorkshopOutput.url, images.ideasWorkshopOutput.caption, ['bleed-start','stage']) }} 
+  <div class="grid grid--fat-thin space--alto">
+    {{ c.prose(goingWide) }}
+    {{ c.image('/assets/images/case-studies/vat-repayment-tracker/ideas-workshop.jpg','I ran an ideas workshop with some brilliant stakeholders and other designers to explore how we could solve VAT tracking end-to-end.',['bleed-start']) }}
+  </div>
+  <div class="grid space--alto">
+    {{ c.quote('This is always my favourite part of the design process: Working with people who wouldn’t call themselves creative and seeing them come up with ingenious ideas.') }}
+  </div>
+  <div class="grid grid--fat-thin space--alto">
+    {{ c.prose(businessBuyIn) }}
+  </div>
+  <div class="grid grid--fat-thin space--pico">
+    {{ c.prose(simpleTracker) }}
+  </div>
+  <div class="grid grid--fat-thin space--alto">
+    {{ c.image('/assets/images/case-studies/vat-repayment-tracker/simple-tracker.png','The simple tracker would have shown the latest status for each repayment in progress. However, we knew that our users would probably want to see as much detail as possible.',['bleed-start','shadow']) }}
+  </div>
+  <div class="grid grid--fat-thin space--pico">
+    {{ c.prose(integratedTracker) }}
+  </div>
+  <div class="grid grid--fat-thin space--alto">
+    {{ c.image('/assets/images/case-studies/vat-repayment-tracker/integrated-tracker.png','A concept where repayment are shown in place of payment due on the VAT account dashboard. Blending the tracker with the VAT account may have worked, but we didn’t get the opportunity to test it.',['bleed-start','shadow']) }}
   </div>
 </section>

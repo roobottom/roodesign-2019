@@ -9,7 +9,7 @@ roles:
 color: yellow
 cover: /assets/images/work/nautilus/nautilus-cover.png
 cta: 'Explore Nautilus'
-preface: I designed and developed a new theme for the Firefly learning platform
+preface: I created a theme for the Firefly learning platform
 ---
 {% import "../_includes/components.njk" as c %}
 
@@ -31,7 +31,7 @@ Mocking-up full pages in Sketch allowed me to "stress test" the design before st
 {% endset %}
 
 {% set prototype %}
-## HTML prototype
+## Building a prototype
 
 Unlike a website, Firefly isn't a curated collection of content — it's a tool that teachers use in a myriad of ways. By creating a click-through prototype before building a full-blown Firefly theme, I could quickly test all kinds of content and make adjustments to ensure that Nautilus looked great — whatever teachers threw at it! 
 
@@ -52,7 +52,7 @@ Unlike a website, Firefly isn't a curated collection of content — it's a tool 
 
 A big challenge that we wanted to address with Nautilus was customisation. Plenty of schools wanted to inject their branding into Firefly, and we'd obliged by developing custom CSS for Blue. Some intrepid teachers had even started hacking Blue's markup and styles themselves. 
 
-All these custom modifications meant that each time schools upgraded to the latest version of Firefly, *something* inevitably broke. Nautilus was our first theme to offer our "smart-rebrand" technology; meaning schools could provide two key-colours and a logo, and the theme _automagically_ adjusts by using tones of those colours throughout — seamlessly matching the brand of the school.
+All these custom modifications meant that each time schools upgraded to the latest version of Firefly, *something* inevitably broke. I built Nautilus with "smart-rebrand" technology; meaning schools could provide two key-colours and a logo, and the theme _automagically_ adjusts by using tones of those colours throughout — seamlessly matching the brand of the school.
 
 No more broken customisations; just beautiful, simple branding for every school.
 {% endset %}
@@ -69,10 +69,11 @@ No more broken customisations; just beautiful, simple branding for every school.
     {{ c.prose(earlyDesigns) }}
   </div>
   <div class="grid space--grande">
-    {{ c.image('/assets/images/work/nautilus/early-desktop.png','Early full-page explorations for Nautilus',['bleed-start','bleed-end','stage']) }}
+    {{ c.image('/assets/images/work/nautilus/early-desktop.png','An early design for the Nautilus Firefly theme',['bleed-start','stage']) }}
   </div>
   <div class="grid grid--fat-thin space--grande">
     {{ c.prose(prototype) }}
+    {{ c.image('/assets/images/work/nautilus/code.png', null, ['bleed-start', 'rotate-right']) }}
   </div>
   <div class="grid grid--fat-thin">
     {{ c.prose(custom) }}
@@ -84,7 +85,7 @@ No more broken customisations; just beautiful, simple branding for every school.
         '/assets/images/work/nautilus/nautlius-alternative.png'
       ],
       'By adding two colours and a logo, Nautilus automatically adjusts to reflect the brand of individual schools',
-      ['bleed-start']
+      ['bleed-start', 'shadow']
     ) }}
   </div>
 </section>

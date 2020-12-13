@@ -1,12 +1,29 @@
 {# image and gallery options:
 
+url: full url to image
+
+caption: figcaption. If none is provided, element is hidden from screen readers.
+
+classes:
+
 * bleed-start
 * bleed-end
-* stage #}
+* stage
+* shadow
+* rotate-right
+* rotate-left 
+
+frame:
+
+* mobile
+* tablet
+* desktop
+
+#}
 
 {# images #}
 {% macro image(url,caption,classes,frame) %}
-  <figure class="figure figure--single-image {% for class in classes %}figure--{{ class }} {% endfor %}">
+  <figure class="figure figure--single-image {% for class in classes %}figure--{{ class }} {% endfor %}" {% if caption == '' or not caption %}aria-hidden="true"{% endif %}>
   <div class="figure__images {% if frame %}frame frame--{{ frame }}{% endif %}">
     <img src="{{ url }}" class="image"{% if caption %} alt="{{ caption }}"{% endif %}>
   </div>
@@ -59,6 +76,19 @@
   </div>
 {% endmacro %}
 
+{# Tags #}
+{% macro tags(tags, classes, title='tags') %}
+  <nav class="tags" aria-label="{{ title }}">
+    <ul class="tag__list">
+      {% for tag in tags %}
+        <li class="tag {% if tag.classes%}{% for class in tag.classes %}tag--{{ class }}{% endfor %}{% endif %}">
+          <a href="{{ tag.url }}" class="tag__link">{{ tag.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}
+
 {# card #}
 {% macro card(data) %}
 <article class="card {{data.classes}}{% if data.url %} card--is-linked{% endif %}{%  if data.color %} card--color-{{ data.color }}{% endif %}">
@@ -100,9 +130,11 @@
 {% macro quote(content,cite) %}
 <blockquote class="quote">
   <p>{{ content | md | safe }}</p>
+  {% if cite %}
   <cite>
     <p>{{ cite | md | safe }}</p>
   </cite>
+  {% endif %}
 </blockquote>
 {% endmacro %}
 
