@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/case-studies"
+  to = "/work"
+  status = 301
+  force = false
+  query = {path = ":path"}

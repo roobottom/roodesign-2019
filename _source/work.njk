@@ -1,18 +1,18 @@
 ---
 layout: default.njk
-title: Case studies
+title: Work
 ---
 {% import "./_includes/components.njk" as c %}
-<div class="grid grid--halves space--alto">
-{% set colors = cycler("odd", "even") %}
-{%- for study in collections['case-study'] -%}
+
+<div class="grid grid--thirds">
+{%- for study in collections['work'] -%}
   {{ c.card({
     title: study.data.title,
     url: study.url,
-    content: study.data.preface,
     cta: study.data.cta,
     color: study.data.color,
-    cover: study.data.cover
+    cover: study.data.cover,
+    headingSize: 'h3'
   }) }}
 {%- endfor -%}
 </div>

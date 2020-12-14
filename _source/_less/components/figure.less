@@ -44,10 +44,26 @@
       grid-template-columns: repeat(auto-fit,minmax(@min,1fr));
   }
 
+  //single row gallery
+  &--single-row&--gallery &__images {
+    display: flex;
+    
+  }
+
   //full
   &--full &__images > img {
       width: 100%;
   }
+
+  //rotations
+  &--rotate-right &__images > img {
+    transform: rotate(2deg);
+  }
+
+  &--rotate-left &__images > img {
+    transform: rotate(-2deg);
+  }
+
 
   //bleed
   .break-mid({
@@ -77,6 +93,11 @@
   &--stage &__images > img {
       background: white;
       box-shadow: 0 0 10px black;
+  }
+
+  //shadow
+  &--shadow &__images > img {
+    box-shadow: 0 0 10px fade(black,15%); 
   }
 
   //colours

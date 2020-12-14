@@ -51,12 +51,23 @@ module.exports = function (config) {
     return md.render(content)
   })
 
+  //spread
+  config.addFilter("spread", function (obj) {
+    return {...obj}
+  })
+
   //static files
   config.addPassthroughCopy("_source/assets")
 
   //case studies
   config.addCollection("case-study", function(collection) {
     return articles = collection.getFilteredByGlob(["./_source/case-studies/*.njk"]).sort( function(a, b) {
+      return b.date - a.date
+    })
+  })
+
+  config.addCollection("work", function(collection) {
+    return collection.getFilteredByGlob(["./_source/work/*.njk"]).sort( function(a, b) {
       return b.date - a.date
     })
   })

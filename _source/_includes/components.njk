@@ -1,13 +1,30 @@
 {# image and gallery options:
 
+url: full url to image
+
+caption: figcaption. If none is provided, element is hidden from screen readers.
+
+classes:
+
 * bleed-start
 * bleed-end
-* stage #}
+* stage
+* shadow
+* rotate-right
+* rotate-left 
+
+frame:
+
+* mobile
+* tablet
+* desktop
+
+#}
 
 {# images #}
-{% macro image(url,caption,options,classes) %}
-  <figure class="figure figure--single-image {% for option in options %}figure--{{ option }} {% endfor %}{% for class in classes %} {{ class }}{% endfor %}">
-  <div class="figure__images">
+{% macro image(url,caption,classes,frame) %}
+  <figure class="figure figure--single-image {% for class in classes %}figure--{{ class }} {% endfor %}" {% if caption == '' or not caption %}aria-hidden="true"{% endif %}>
+  <div class="figure__images {% if frame %}frame frame--{{ frame }}{% endif %}">
     <img src="{{ url }}" class="image"{% if caption %} alt="{{ caption }}"{% endif %}>
   </div>
   {% if caption %}<figcaption>{{ caption | md | safe }}</figcaption>{% endif %}
@@ -59,6 +76,19 @@
   </div>
 {% endmacro %}
 
+{# Tags #}
+{% macro tags(tags, classes, title='tags') %}
+  <nav class="tags" aria-label="{{ title }}">
+    <ul class="tag__list">
+      {% for tag in tags %}
+        <li class="tag {% if tag.classes%}{% for class in tag.classes %}tag--{{ class }}{% endfor %}{% endif %}">
+          <a href="{{ tag.url }}" class="tag__link">{{ tag.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}
+
 {# card #}
 {% macro card(data) %}
 <article class="card {{data.classes}}{% if data.url %} card--is-linked{% endif %}{%  if data.color %} card--color-{{ data.color }}{% endif %}">
@@ -71,9 +101,9 @@
 
   <div class="card__content">
     {% if data.headingSize %}
-      <{{ data.headingSize }} class="card__title space--pico">{{ data.title }}</{{ data.headingSize }}>
+      <{{ data.headingSize }} class="card__title space--pico {{ data.headingClass }}">{{ data.title }}</{{ data.headingSize }}>
     {% else %}
-    <h2 class="card__title space--pico">{{ data.title }}</h2>
+    <h2 class="card__title space--pico {{ data.headingClass }}">{{ data.title }}</h2>
     {% endif %}
     {% if data.date %}
     <time class="card__date" datetime="{{ data.date }}">{{ data.date | date }}</time>
@@ -96,13 +126,22 @@
 </article>
 {% endmacro %}
 
+{# boxout #}
+{% macro boxout(content,classes) %}
+<div class="boxout prose {% if classes%}{% for class in classes %}boxout--{{ class }}{% endfor %}{% endif %}">
+ {{ content | md | safe }}
+</div>
+{% endmacro %}
+
 {# quote #}
 {% macro quote(content,cite) %}
 <blockquote class="quote">
   <p>{{ content | md | safe }}</p>
+  {% if cite %}
   <cite>
     <p>{{ cite | md | safe }}</p>
   </cite>
+  {% endif %}
 </blockquote>
 {% endmacro %}
 
@@ -126,6 +165,15 @@
     {{ title }}
     {% if showArrow %}{{ icon('arrow') }}{% endif %}
   </a>
+{% endmacro %}
+
+{# buttons #}
+{% macro buttons(buttons, classes) %}
+  <div class="buttons {% for class in classes %}buttons--{{ class }} {% endfor %}">
+    {% for data in buttons %}
+      {{ button(data.title, data.url, data.showArrow, data.classes) }}
+    {% endfor %}
+  </div>
 {% endmacro %}
 
 {# icons #}
