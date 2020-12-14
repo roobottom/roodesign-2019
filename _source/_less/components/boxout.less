@@ -1,0 +1,13 @@
+.boxout {
+  border: 1px solid @c_purple;
+  padding: unit(@gap/@base,rem);
+  background-color: @c_purple_light;
+  margin-bottom: unit(@gap/@base,rem);
+  margin-left: unit(-1 * @gap/@base,rem);
+  background-image: url('@{img_path}pattern-roo-black-10.svg');
+  box-shadow: inset 0 0 0 3px white;
+
+  >*:last-child {
+    margin-bottom: 0;
+  }
+}

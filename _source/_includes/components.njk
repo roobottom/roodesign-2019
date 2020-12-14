@@ -126,6 +126,13 @@ frame:
 </article>
 {% endmacro %}
 
+{# boxout #}
+{% macro boxout(content,classes) %}
+<div class="boxout prose {% if classes%}{% for class in classes %}boxout--{{ class }}{% endfor %}{% endif %}">
+ {{ content | md | safe }}
+</div>
+{% endmacro %}
+
 {# quote #}
 {% macro quote(content,cite) %}
 <blockquote class="quote">

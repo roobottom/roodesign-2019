@@ -13,6 +13,16 @@ color: yellow
 cover: /assets/images/case-studies/vat-repayment-tracker/vrt-cover.png
 cta: 'See how I helped the tax payer'
 preface: I helped HMRC to better serve the taxpayer by designing a service to track VAT repayments online.
+outcomes:
+  -
+    title: Users love the service!
+    content: Track your VAT repayments had 91% customer satisfaction (CSAT) score from ~346,000 active sessions.
+  -
+    title: We reduced calls
+    content: We saw that ~24,000 fewer people called the VAT helpline compared to the same period in the previous year.
+  -
+    title: We saved HMRC money
+    content: By reducing calls and decreasing repayment by cheque, we saved a substantial amount of money.
 ---
 {% import "../_includes/components.njk" as c %}
 
@@ -45,6 +55,8 @@ I was part of a team who designed and built a new service that let users check t
     {{ c.prose(theProblem) }}
   </div>
 </section>
+
+{# --- DISCOVERY --- #}
 
 {% set discovery %}
 In the [Discovery phase](https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works), we:
@@ -119,6 +131,8 @@ I translated all our findings into an "as-is" service blueprint. This allowed us
   </div>
 </section>
 
+{# --- ALPHA --- #}
+
 {% set alpha %}
 In the [Alpha phase](https://www.gov.uk/service-manual/agile-delivery/how-the-alpha-phase-works), we:
 
@@ -146,18 +160,55 @@ This is always my favourite part of the design process: Working with people who 
 In HMRC Digital, we work alongside other parts of the revenue—what we loving refer to as "the business". There's naturally a lot of red-tape in government, and solutions can be narrowed early. So we needed to get buy-in before we did any serious testing with users. I put together some options in Sketch. The intention was to demonstrate a general direction to the business.
 {% endset %}
 {% set simpleTracker %}
-#### The simple tracker
+#### Idea one: The simple tracker
 
 They say lead with your weakest idea. Or, in our case, the one you don't want to be approved. This solution, we felt, would offer some reassurance but not enough to prevent calls to the helpline. But it was cheaper to develop, and we knew that cost was a factor. 
 {% endset %}
 
 {% set integratedTracker %}
-#### The integrated tracker
+#### Idea two: The integrated tracker
 
 In some ways, this solution would have made a lot of sense. We proposed that we allowed users to track repayments directly as part of their VAT account dashboard. 
 
 The integrated tracker was never going to fly as it meant we'd have to hand the work over to another team. When cost centres have more sway than user need all you can do is roll with the punches, but it's a shame when business structure imposes itself on the UX. 
 {% endset %}
+
+{% set thirdPartyTracker %}
+#### Idea three: The third-party tracker
+
+Thanks to the Making Tax Digital programme, VAT payers were now submitting tax returns from MTD compatible software. We thought it probable that people would want to see any repayments progress in the same place, too. We thought providing an API would be an ideal addition to any service hosted on GOV.UK. The business agreed but proposed funding the API work as part of a possible second phase.
+{% endset %}
+
+{% set deluxeTracker %}
+#### Idea four: The deluxe tracker
+
+The deluxe tracker was created to show complete information about repayments. By providing a full history of statuses with an explanation of what they meant, we could hit every one of the user needs. Thankfully, the business agreed and green-lit further work on this solution.
+{% endset %}
+
+{% set alerts %}
+### Moving closer to a solution
+
+Now we had a direction agreed, we could start testing and improving the deluxe tracker.
+
+#### Alerts
+
+One of the things we explored was the idea of alerts: where a user could sign-up for a notification when their repayment moved from one stage to another. 
+
+I mapped out how this could work. Based on the states we knew a repayment could move through, I knew that some users would receive some alerts in quick succession, then non at all for weeks. We decided to concentrate our effort elsewhere and revisit alerts later. This tuned out to be a wise decision; during testing, we saw there wasn't really any user need for alerts. People generally prefer to log-in and check-up rather than be pushed to by a message. Even those that said this _might_ be useful admitted they'd ignore an email. Text messages were a better option, but expensive to develop for not much benefit.
+{% endset %}
+
+{% set whenWillIGetMyRepayment %}
+#### When will I get my repayment?
+
+One thing that kept coming up in testing was the question "when will I get my repayment?" We felt that without showing dates, we wouldn't put a dent in the volume of calls to the helpline. 
+
+The problem was that we couldn't just pull a date out of an API as no such data existed. We did, however, know when the user had submitted their return and how long [HMRC allowed for repayments](https://www.gov.uk/vat-repayments#how-long-it-takes); at 30 days HMRC would have to pay a "repayment supplement" if the delay was their fault. So we tested a version with an approximate date. This worked great! 
+
+If repayments were delayed beyond 30 days, we added a new timeline item to the history acknowledging this and providing guidance on what the user could try next. 
+
+This also prompted us to redesign the tracker history page. Making the amount and estimate date front-and-centre worked well during testing. 
+{% endset %}
+
 
 <section class="space--grande" id="alpha">
   <div class="grid">
@@ -187,5 +238,64 @@ The integrated tracker was never going to fly as it meant we'd have to hand the 
   </div>
   <div class="grid grid--fat-thin space--alto">
     {{ c.image('/assets/images/case-studies/vat-repayment-tracker/integrated-tracker.png','A concept where repayment are shown in place of payment due on the VAT account dashboard. Blending the tracker with the VAT account may have worked, but we didn’t get the opportunity to test it.',['bleed-start','shadow']) }}
+  </div>
+  <div class="grid grid--fat-thin space--alto">
+    {{ c.prose(thirdPartyTracker) }}
+  </div>
+  <div class="grid grid--fat-thin space--pico">
+    {{ c.prose(deluxeTracker) }}
+  </div>
+  <div class="grid space--alto">
+    {{ c.gallery(
+      ['/assets/images/case-studies/vat-repayment-tracker/deluxe-tracker-dashboard.png',
+      '/assets/images/case-studies/vat-repayment-tracker/deluxe-tracker-history.png'],
+      'The tracker dashboard first, the history page last. By providing as much information as possible, we hoped to reassure users and so prevent calls to the VAT helpline.',
+      ['bleed-start','stage']
+    ) }}
+  </div>
+  <div class="grid grid--fat-thin space--pico">
+    {{ c.prose(alerts) }}
+  </div>
+  <div class="grid space--alto">
+    {{ c.image('/assets/images/case-studies/vat-repayment-tracker/alerts.png','Mapping alerts. A diagram showing the various alerts a user of the VAT repayments service might receive. Some parts are have been intentionally blurred.',['bleed-start','shadow']) }}
+  </div>
+  <div class="grid grid--fat-thin space--pico">
+    {{ c.prose(whenWillIGetMyRepayment) }}
+  </div>
+  <div class="grid space--alto">
+    {{ c.gallery(
+      ['/assets/images/case-studies/vat-repayment-tracker/history-page-early-on.png',
+      '/assets/images/case-studies/vat-repayment-tracker/history-page-later-design.png'],
+      'Evolving the tracker history page: By making the most relevant information front-and-centre users were reassured that the repayment they expected was progressing. First is an early design, last is a later design.',
+      ['bleed-start','stage']
+    ) }}
+  </div>
+</section>
+
+
+{# --- BETA --- #}
+
+{# {% set timeline %}
+Creating an accessible timeline: You can [read about the accessible timeline component](/articles/2020-10-15-an-accessible-timeline-component-for-gov.uk/) I helped to design and build as part of this project.
+{% endset %}
+
+<section class="space--grande" id="beta">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#beta">Beta</a></h2>
+  </div>
+</section> #}
+
+
+{# --- OUTCOMES --- #}
+
+<section class="space--grande container--decoration-highlight" id="outcomes">
+  <div class="grid">
+    <h2 class="marker marker--number space--pico"><a href="#outcomes">Outcomes</a></h2>
+  </div>
+  <div class="grid grid--thirds">
+    {{ c.outcomes(outcomes) }}
+  </div>
+  <div class="grid grid--fat-thin">
+    {{ c.prose('_The data is from the first 12 months of the service. Some results are inferred from service volumes and task completion rates._') }}
   </div>
 </section>
