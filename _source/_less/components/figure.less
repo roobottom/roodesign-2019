@@ -55,6 +55,16 @@
       width: 100%;
   }
 
+  //homepage-hero
+  &--homepage-hero {
+    max-width: unit(340/@base,rem);
+    justify-self: center;
+    .break-mid({
+      margin-top: unit(-120/@base,rem);
+      z-index: -1;
+    });
+  }
+
   //rotations
   &--rotate-right &__images > img {
     transform: rotate(2deg);
