@@ -71,7 +71,7 @@ frame:
 
 {# prose #}
 {% macro prose(content,classes) %}
-  <div class="prose{% for class in classes %} {{ class }}{% endfor %}">
+  <div class="prose{% for class in classes %} prose--{{ class }}{% endfor %}">
   {{ content | md | safe }}
   </div>
 {% endmacro %}
