@@ -6,7 +6,7 @@
       title: 'Core colours',
       colours: [
         {
-          title: 'Green',
+          name: 'Green',
           hex: '#71CBAF',
           var: '@c_green'
         }
@@ -16,6 +16,18 @@
 }
 ---
 {% import "./../../_includes/components.njk" as c %}
-<div class="ds-colours">
-  
-</div>
+{% for colourSet in colourSets %}
+  <h2>{{ colourSet.title }}</h2>
+  <div class="ds-colourSet">
+  {% for colour in colourSet.colours %}
+    <div class="ds-colour" style="background-color: {{ colour.hex }}">
+      <dl class="ds-colour__data">
+        <div class="ds-colour__data-item">
+          <dt>Name</dt>
+          <dd>{{ colour.name }}</dd>
+        </div>
+      </dl>
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}
