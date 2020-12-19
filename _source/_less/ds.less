@@ -1,0 +1,35 @@
+.ds {
+
+  //colours
+
+  &-colourSet {
+    display: flex;
+    flex-wrap: wrap;
+    >* { margin: 0 unit(@gap/@base,rem) unit(@gap/@base,rem) 0; }
+  }
+
+  &-colour {
+    padding-top: unit(@gap * 4/@base, rem);
+    border-width: 3px;
+    border-style: solid;
+
+    &__data {
+      padding: unit(@gap/@base,rem);
+      background-color: white;
+      #type > #size > .regular;
+    }
+
+    &__data-item {
+      display: flex;
+
+      dt {
+        color: @c_grey_med;
+      }
+      dd {
+        margin-left: unit(@gap/2/@base,rem);
+      }
+    }
+
+  }
+
+} 

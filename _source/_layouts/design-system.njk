@@ -9,17 +9,23 @@
   </div>
 {% endblock %}
 
+{% macro subNavLink(url, title) %}
+{% set isActive = false %}
+{% if page.url == url %}{% set isActive = true %}{% endif %}
+<a href="{{ url }}" class="subnav__link {% if isActive%}subnav__link--active{% endif %}" {% if isActive%}aria-current="true"{% endif %}>{{ title }}</a>
+{% endmacro %}
+
 {% block content %}
 <main class="container">
   <div class="grid grid--thin-fat">
     <nav class="subnav bleed--start" role="navigation" aria-label="Sub navigation">
       <ul class="subnav__list subnav__list--level-0">
-        <li class="subnav__item"><a href="/design-system/" class="subnav__link {% if page.url == '/design-system/' %}subnav__link--active{% endif %}">Introduction</a></li>
+        <li class="subnav__item">{{ subNavLink('/design-system/','Introduction') }}</li>
         <li class="subnav__item">
-          <a href="/design-system/styles/" class="subnav__link {% if page.url == '/design-system/styles/' %}subnav__link--active{% endif %}">Styles</a>
+          {{ subNavLink('/design-system/styles/','Styles') }}
           <ul class="subnav__list subnav__list--level-1">
             {% for targetPage in collections['dsStyles'] %}
-              <li class="subnav__item"><a href="{{ targetPage.url }}" class="subnav__link {% if targetPage.url == page.url %}subnav__link--active{% endif %}">{{ targetPage.data.title }}</a></li>
+              <li class="subnav__item">{{ subNavLink(targetPage.url,targetPage.data.title) }}</li>
             {% endfor %}
           </ul>
         </li>
