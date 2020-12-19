@@ -1,26 +1,33 @@
 {% extends "./_site-wrapper.njk" %}
 
+{% block header %}
+  <div class="grid grid--cinched space--alto">
+    <div class="heading">
+      <span class="heading__caption">Design system</span>
+      <h1 class="bleed--start">{{ title }}</h1>
+    </div>
+  </div>
+{% endblock %}
+
 {% block content %}
 <main class="container">
-  <div class="grid grid--thin-fat-wide">
-  <nav class="subnav" role="navigation" aria-label="Sub navigation">
-    <h2 class="h3 subnav__label">Styles</h2>
-    <ul class="subnav__list">
-      {% for page in collections['dsStyles'] %}
-      <li class="subnav__item"><a href="{{ page.url }}" class="subnav__link">{{ page.data.title }}</a></li>
-      {% endfor %}
-    </ul>
-    <h2 class="h3 subnav__label">Components</h2>
-    <ul class="subnav__list">
-      {% for page in collections['dsComponents'] %}
-      <li class="subnav__item"><a href="{{ page.url }}" class="subnav__link">{{ page.data.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav> 
-  <div class="ds-content">
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
+  <div class="grid grid--thin-fat">
+    <nav class="subnav bleed--start" role="navigation" aria-label="Sub navigation">
+      <ul class="subnav__list subnav__list--level-0">
+        <li class="subnav__item"><a href="/design-system/" class="subnav__link {% if page.url == '/design-system/' %}subnav__link--active{% endif %}">Introduction</a></li>
+        <li class="subnav__item">
+          <a href="/design-system/styles/" class="subnav__link {% if page.url == '/design-system/styles/' %}subnav__link--active{% endif %}">Styles</a>
+          <ul class="subnav__list subnav__list--level-1">
+            {% for targetPage in collections['dsStyles'] %}
+              <li class="subnav__item"><a href="{{ targetPage.url }}" class="subnav__link {% if targetPage.url == page.url %}subnav__link--active{% endif %}">{{ targetPage.data.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="ds-content">
+      {{ content | safe }}
+    </div> 
   </div>
-</div>
 </main>
 {% endblock %}

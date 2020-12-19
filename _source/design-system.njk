@@ -1,5 +1,14 @@
 ---
 layout: design-system.njk
-title: Design system
+title: Introduction
 ---
 {% import "./_includes/components.njk" as c %}
+{% set content %}
+Welcome to **Kanga**: The roodesign system. {.lead} 
+
+These pages are to document the roodesign look and feel and interface elements. It's mainly here as a showcase of my work, but also as a reference when I'm updating this site.
+
+The structure is based on the [GOV.UK Design System](https://design-system.service.gov.uk/get-started/).
+{% endset %}
+
+{{ c.prose(content,['article']) }}

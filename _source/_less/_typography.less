@@ -129,7 +129,7 @@
             color: @c_grey_x-dark;
             text-decoration: underline;
             &:hover {
-                color: darken(@c_grey_x-dark, 10%);
+                text-decoration: solid underline @c_grey_x-dark 3px;
             }
             &:focus {
                 outline: 3px solid transparent;
@@ -180,6 +180,11 @@ body, input, textarea, button {
 
 body {
     counter-reset: section; 
+}
+
+.heading__caption {
+    #type > #size > .h3;
+    color: @c_grey_med;
 }
 
 .marker {
