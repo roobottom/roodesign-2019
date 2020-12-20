@@ -63,6 +63,32 @@
           var: '@c_purple_light'
         }
       ]
+    },
+
+    {
+      title: 'Greys',
+      colours: [
+        {
+          name: 'Light grey',
+          hex: '#EFEFEF',
+          var: '@c_grey_light'
+        },
+        {
+          name: 'Medium grey',
+          hex: '#737373',
+          var: '@c_grey_med'
+        },
+        {
+          name: 'Dark grey',
+          hex: '#505050',
+          var: '@c_grey_dark'
+        },
+        {
+          name: 'Extra dark grey',
+          hex: '#222222',
+          var: '@c_grey_x-dark'
+        }
+      ]
     }
 
 
@@ -76,7 +102,7 @@
   </div>
   <div class="ds-colourSet space--tall">
   {% for colour in colourSet.colours %}
-    <div class="ds-colour" style="background-color: {{ colour.hex }}; border-color: {{ colour.hex }};">
+    <div class="ds-colour" style="background-color: {{ colour.hex }};">
       <dl class="ds-colour__data">
         <div class="ds-colour__data-item">
           <dt>Name</dt>

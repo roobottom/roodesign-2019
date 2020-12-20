@@ -5,13 +5,20 @@
   &-colourSet {
     display: flex;
     flex-wrap: wrap;
-    >* { margin: 0 unit(@gap/@base,rem) unit(@gap/@base,rem) 0; }
+    >* { 
+      margin: 0 unit(@gap/@base,rem) unit(@gap/@base,rem) 0;
+      @setGap: 4 * @gap-rem;
+      min-width: ~"calc((100% / 3) - @{setGap})";
+    }
   }
 
   &-colour {
     padding-top: unit(@gap * 4/@base, rem);
-    border-width: 3px;
-    border-style: solid;
+    border: 2px solid @c_grey_med;
+    box-shadow: 
+      inset 0 0 0 3px white,
+      2px 2px 0 white,
+      4px 4px 0 @c_grey_med;
 
     &__data {
       padding: unit(@gap/@base,rem);
