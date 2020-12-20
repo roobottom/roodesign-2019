@@ -1,0 +1,21 @@
+---
+title: Typography
+---
+{% import "./../../_includes/components.njk" as c %}
+
+{% set fonts %}
+## Fonts
+Roodesign uses Orkney by [Haken Design Co](https://hanken.co/). It's a free font. I rather like it. 
+
+For the main headings, I use [Young Serif by Noir Blanc Rouge](https://noirblancrouge.com/fonts/young-serif/). It's also a free font, and I rather like it, too!
+{% endset %}
+<section class="space--tall">
+  {{ c.prose(fonts,['article'])}}
+</section>
+
+{% set headings %}
+## Headings
+{% endset %}
+<section class="space--tall">
+  {{ c.prose(headings,['article'])}}
+</section>
