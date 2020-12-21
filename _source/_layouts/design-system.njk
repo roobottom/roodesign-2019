@@ -29,6 +29,14 @@
             {% endfor %}
           </ul>
         </li>
+        <li class="subnav__item">
+          {{ subNavLink('/design-system/components/','Components') }}
+          <ul class="subnav__list subnav__list--level-1">
+            {% for targetPage in collections['dsComponents'] %}
+              <li class="subnav__item">{{ subNavLink(targetPage.url,targetPage.data.title) }}</li>
+            {% endfor %}
+          </ul>
+        </li>
       </ul>
     </nav>
     <div class="ds-content">

@@ -1,0 +1,19 @@
+---
+title: Image
+---
+{% import "./../../_includes/components.njk" as c %}
+{{ c.prose('## Single image',['article']) }}
+{%- set imageNunjucks -%}{% raw %}
+{{ c.image(
+  url= '/assets/images/design-system/example-portrait.jpeg',
+  caption= 'A display of spider web like criss-crossed green light filaments.'
+) }}
+{% endraw %}{%- endset -%}
+{% set imageHTML %}
+{{ c.image(
+  url= '/assets/images/design-system/example-portrait.jpeg',
+  caption= 'A display of spider web like criss-crossed green light filaments.'
+) }}
+{% endset %}
+
+{{ c.dsExample(imageHTML, imageNunjucks) }}

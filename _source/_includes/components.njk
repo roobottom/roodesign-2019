@@ -22,14 +22,14 @@ frame:
 #}
 
 {# images #}
-{% macro image(url,caption,classes,frame) %}
-  <figure class="figure figure--single-image {% for class in classes %}figure--{{ class }} {% endfor %}" {% if caption == '' or not caption %}aria-hidden="true"{% endif %}>
+{%- macro image(url,caption,classes,frame) -%}
+<figure class="figure figure--single-image {% for class in classes %}figure--{{ class }} {% endfor %}" {% if caption == '' or not caption %}aria-hidden="true"{% endif %}>
   <div class="figure__images {% if frame %}frame frame--{{ frame }}{% endif %}">
     <img src="{{ url }}" class="image"{% if caption %} alt="{{ caption }}"{% endif %}>
   </div>
   {% if caption %}<figcaption>{{ caption | md | safe }}</figcaption>{% endif %}
-  </figure>
-{% endmacro %}
+</figure>
+{%- endmacro -%}
 
 {# gallery #}
 {% macro gallery(urls, caption, options) %}
@@ -181,4 +181,15 @@ frame:
 <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" class="icon icon--{{ name }}">
   <use xlink:href="/assets/images/icons.svg#icon-{{ name }}"></use>
 </svg>
+{% endmacro %}
+
+{# Design system components #}
+{% macro dsExample(html, nunjucks, classes) %}
+<div class="ds-example {% for class in classes %}ds-example--{{ class }}{% endfor %}">
+  <div class="ds-example__showcase">
+    {{ html | safe }}
+  </div>
+  <pre class="ds-example__code ds-example__code--html">{{ html }}</pre>
+  {%- if nunjucks -%}<pre class="ds-example__code ds-example__code--nunjucks">{{ nunjucks }}</pre>{%- endif -%}
+</div>
 {% endmacro %}

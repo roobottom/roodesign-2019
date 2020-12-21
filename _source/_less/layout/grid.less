@@ -58,7 +58,7 @@
 @supports (display:grid) {
 
     .grid {
-      display: grid;
+      
       grid-gap: unit(@gap * 2 / @base,rem);
       grid-gap: ~"calc( var(--gap) * 2)"; 
       &--showcase >*:nth-child(2n) {
@@ -69,7 +69,7 @@
     @media screen and (min-width: (@break-min-rem)) {
     
         .grid {
-            
+            display: grid;
             grid-template-columns: repeat(8, 1fr);
             grid-auto-flow: row;
 
