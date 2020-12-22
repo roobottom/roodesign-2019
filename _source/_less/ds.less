@@ -42,9 +42,12 @@
   //example
 
   &-example {
-    border: 1px solid @c_grey_x-dark;
+    border: 1px solid @c_grey_med;
     margin-left: -1 * @gap-rem;
     margin-bottom: 2* @gap-rem;
+    box-shadow: 
+      4px 4px 0 white,
+      8px 8px 0 @c_grey_med;
 
     &__showcase {
       padding: @gap-rem;
@@ -56,7 +59,7 @@
       padding: @gap-rem;
       background-color: @c_grey_light;
       overflow-x: auto;
-      border-top: 1px solid @c_grey_x-dark;
+      border-top: 1px solid @c_grey_med;
     }
   }
 

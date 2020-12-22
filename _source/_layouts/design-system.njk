@@ -1,14 +1,5 @@
 {% extends "./_site-wrapper.njk" %}
 
-{% block header %}
-  <div class="grid grid--cinched space--alto">
-    <div class="heading">
-      <span class="heading__caption">Design system</span>
-      <h1 class="bleed--start">{{ title }}</h1>
-    </div>
-  </div>
-{% endblock %}
-
 {% macro subNavLink(url, title) %}
 {% set isActive = false %}
 {% if page.url == url %}{% set isActive = true %}{% endif %}
@@ -17,10 +8,18 @@
 
 {% block content %}
 <main class="container">
-  <div class="grid grid--thin-fat">
+  <div class="grid grid--thin-fat-split">
     <nav class="subnav bleed--start" role="navigation" aria-label="Sub navigation">
       <ul class="subnav__list subnav__list--level-0">
         <li class="subnav__item">{{ subNavLink('/design-system/','Introduction') }}</li>
+        <li class="subnav__item">
+          {{ subNavLink('/design-system/brand/','Brand') }}
+          <ul class="subnav__list subnav__list--level-1">
+            {% for targetPage in collections['dsBrand'] %}
+              <li class="subnav__item">{{ subNavLink(targetPage.url,targetPage.data.title) }}</li>
+            {% endfor %}
+          </ul>
+        </li>
         <li class="subnav__item">
           {{ subNavLink('/design-system/styles/','Styles') }}
           <ul class="subnav__list subnav__list--level-1">
@@ -40,6 +39,10 @@
       </ul>
     </nav>
     <div class="ds-content">
+      <div class="heading space--tall">
+        <span class="heading__caption">Design system</span>
+        <h1 class="bleed--start">{{ title }}</h1>
+      </div>
       {{ content | safe }}
     </div> 
   </div>

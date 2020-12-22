@@ -25,15 +25,15 @@ frame:
 {%- macro image(url,caption,classes,frame) -%}
 <figure class="figure figure--single-image {% for class in classes %}figure--{{ class }} {% endfor %}" {% if caption == '' or not caption %}aria-hidden="true"{% endif %}>
   <div class="figure__images {% if frame %}frame frame--{{ frame }}{% endif %}">
-    <img src="{{ url }}" class="image"{% if caption %} alt="{{ caption }}"{% endif %}>
+    <img src="{{ url }}" class="image">
   </div>
   {% if caption %}<figcaption>{{ caption | md | safe }}</figcaption>{% endif %}
 </figure>
 {%- endmacro -%}
 
 {# gallery #}
-{% macro gallery(urls, caption, options) %}
-  <figure class="figure figure--gallery {% for option in options %}figure--{{ option }} {% endfor %}">
+{% macro gallery(urls, caption, classes) %}
+  <figure class="figure figure--gallery {% for class in classes %}figure--{{ class }} {% endfor %}">
   <div class="figure__images">
     {% for url in urls -%}
     <img src="{{ url }}" class="image" {% if data.caption %} alt="{{ caption }} - {{ loop.index }} of {{ loop.length }} images"{% endif %}>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="410px" height="300px" viewBox="0 0 410 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="143px" height="54px" viewBox="0 0 143 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>logo-mini-roo</title>
     <g id="logo-mini-roo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" transform="translate(6.000000, 50.000000)">
-            <g id="Group-2" transform="translate(0.000000, 0.000000)" stroke="#3F3F3F" stroke-width="7">
-                <polygon id="Combined-Shape" points="79.4117647 40 158.823529 120 79.4117647 200 0 120"></polygon>
-                <polygon id="Combined-Shape" points="119.048773 6.69518998e-15 158.823529 40.0462294 79.4117647 120 0 40.0462294 39.7747564 0 79.4117647 39.9075411"></polygon>
+        <g id="Group" transform="translate(21.000000, 2.000000)">
+            <g id="Group-2" transform="translate(0.000000, 0.000000)" stroke="#3F3F3F" stroke-width="2">
+                <polygon id="Combined-Shape" points="19.8529412 10 39.7058824 30 19.8529412 50 0 30"></polygon>
+                <polygon id="Combined-Shape" points="29.7621932 1.6737975e-15 39.7058824 10.0115574 19.8529412 30 0 10.0115574 9.94368911 0 19.8529412 9.97688528"></polygon>
             </g>
-            <path d="M364.048773,1.42108547e-14 L403.823529,40.0462294 L364.128,80.012 L403.823529,120 L324.411765,200 L245,120 L284.694,80.012 L245,40.0462294 L284.774756,1.42108547e-14 L324.411765,39.9075411 L364.048773,1.42108547e-14 Z" id="Combined-Shape" fill="#3F3F3F"></path>
+            <path d="M91.0121932,3.55271368e-15 L100.955882,10.0115574 L91.031,20.003 L100.955882,30 L81.1029412,50 L61.25,30 L71.173,20.003 L61.25,10.0115574 L71.1936891,3.55271368e-15 L81.1029412,9.97688528 L91.0121932,3.55271368e-15 Z" id="Combined-Shape" fill="#3F3F3F"></path>
         </g>
     </g>
 </svg>
