@@ -1,0 +1,107 @@
+---
+title: Typography
+---
+{% import "./../../_includes/components.njk" as c %}
+
+{# ------- Fonts ------ #}
+
+{% set fonts %}
+## Fonts
+Roodesign uses Orkney by [Haken Design Co](https://hanken.co/). It's a free font. I rather like it. 
+
+For the main headings, I use [Young Serif by Noir Blanc Rouge](https://noirblancrouge.com/fonts/young-serif/). It's also a free font, and I rather like it, too!
+{% endset %}
+<section class="space--grande">
+  {{ c.prose(fonts,['article'])}}
+</section>
+
+{# ------- Headings ------ #}
+
+
+{% set headings %}
+## Headings
+There are three heading styles used globally. These are generally marked-up as `<h1>`, `<h2>` and `<h3>`. Headings further down the pecking order inherit from the global text style. 
+{% endset %}
+{% set headingsEg %}
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+{% endset %}
+
+{% set overideHeadings %}
+### Overriding headings
+Sometimes I need to use the correct `h#` to maintain semantic meaning but make the heading visually smaller or larger. I can do this with override heading classes.
+{% endset%}
+{% set overideHeadingsEg %}
+<h3 class="h1">Heading level 3 that looks like level 1</h3>
+{% endset %}
+<section class="space--grande">
+  {{ c.prose(headings,['article'])}}
+  {{ c.dsExample(headingsEg) }}
+  {{ c.prose(overideHeadings,['article'])}}
+  {{ c.dsExample(overideHeadingsEg) }}
+</section>
+
+
+{# ------- Prose ------ #}
+
+{% set prose %}
+## Prose
+
+A `prose` wrapper is used to give elements within it standard text styling. This is to protect these styles from leaking into other components.
+
+### Body copy
+{% endset %}
+{% set proseEg %}
+<div class="prose">
+  <p>Body copy is 16px on small screens and 19px on larger screens.</p>
+</div>
+{% endset %}
+{% set lead %}
+### Lead paragraphs
+
+Lead paragraphs are used to introduce a page or section. 
+{% endset %}
+{% set leadEg %}
+<div class="prose">
+  <p class="lead">Lead paragraphs are 19px on small screens and 24px on larger screens.</p>
+</div>
+{% endset %}
+{% set links %}
+### Links
+
+Links are underlined and have `hover` and `focus` states. If a link is at the end of a sentence or paragraph, make sure that the linked text does not include the full stop.
+{% endset %}
+{% set linksEg %}
+<div class="prose">
+ <p><a href="#">Links</a> inherit their size from their parent element.</p>
+</div>
+{% endset %}
+
+{% set orderedLists %}
+### Ordered lists
+
+Ordered lists should never be more than one level deep; if you need more, rewrite your content.
+
+Ordered lists should only be used where there is an explist order to the items, otherwise use an unordered list.
+{% endset %}
+{% set orderedListsEg %}
+<div class="prose">
+ <ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+ </ol>
+</div>
+{% endset %}
+
+<section class="space--grande">
+  {{ c.prose(prose,['article'])}}
+  {{ c.dsExample(proseEg) }}
+  {{ c.prose(lead,['article'])}}
+  {{ c.dsExample(leadEg) }}
+  {{ c.prose(links,['article'])}}
+  {{ c.dsExample(linksEg) }}
+  {{ c.prose(orderedLists,['article'])}}
+  {{ c.dsExample(orderedListsEg) }}
+</section>

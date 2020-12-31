@@ -1,0 +1,124 @@
+---js
+{
+  title: 'Colours',
+  order: 2,
+  colourSets: [
+    
+    {
+      title: 'Core colours',
+      colours: [
+        {
+          name: 'Green',
+          hex: '#71CBAF',
+          var: '@c_green'
+        },
+        {
+          name: 'Blue',
+          hex: '#004ADB',
+          var: '@c_blue'
+        },
+        {
+          name: 'Red',
+          hex: '#E97055',
+          var: '@c_red'
+        },
+        {
+          name: 'Yellow',
+          hex: '#EDBB4A',
+          var: '@c_yellow'
+        },
+        {
+          name: 'Purple',
+          hex: '#9013FE',
+          var: '@c_purple'
+        }
+      ]
+    },
+
+    {
+      title: 'Tints',
+      colours: [
+        {
+          name: 'Light green',
+          hex: '#F0FAF7',
+          var: '@c_green_light'
+        },
+        {
+          name: 'Light blue',
+          hex: '#D7E2F9',
+          var: '@c_blue_light'
+        },
+        {
+          name: 'Light red',
+          hex: '#F6DFDA',
+          var: '@c_red_light'
+        },
+        {
+          name: 'Light yellow',
+          hex: '#FFEFCB',
+          var: '@c_yellow_light'
+        },
+        {
+          name: 'Light purple',
+          hex: '#FAF3FF',
+          var: '@c_purple_light'
+        }
+      ]
+    },
+
+    {
+      title: 'Greys',
+      colours: [
+        {
+          name: 'Light grey',
+          hex: '#EFEFEF',
+          var: '@c_grey_light'
+        },
+        {
+          name: 'Medium grey',
+          hex: '#CFCFCF',
+          var: '@c_grey_med'
+        },
+        {
+          name: 'Dark grey',
+          hex: '#505050',
+          var: '@c_grey_dark'
+        },
+        {
+          name: 'Extra dark grey',
+          hex: '#222222',
+          var: '@c_grey_x-dark'
+        }
+      ]
+    }
+
+
+  ]
+}
+---
+{% import "./../../_includes/components.njk" as c %}
+{% for colourSet in colourSets %}
+  <div class="prose prose--article">
+    <h2>{{ colourSet.title }}</h2>
+  </div>
+  <div class="ds-colourSet space--tall">
+  {% for colour in colourSet.colours %}
+    <div class="ds-colour" style="background-color: {{ colour.hex }};">
+      <dl class="ds-colour__data">
+        <div class="ds-colour__data-item">
+          <dt>Name</dt>
+          <dd>{{ colour.name }}</dd>
+        </div>
+        <div class="ds-colour__data-item">
+          <dt>Hex</dt>
+          <dd><code>{{ colour.hex }}</code></dd>
+        </div>
+        <div class="ds-colour__data-item">
+          <dt>Var</dt>
+          <dd><code>{{ colour.var }}</code></dd>
+        </div>
+      </dl>
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}

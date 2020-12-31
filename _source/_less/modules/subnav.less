@@ -1,10 +1,10 @@
 .subnav {
-  padding: @gap-rem;
-  border: 2px solid @c_grey_dark;
-  box-shadow: 2px 2px 0 white, 6px 6px 0 @c_yellow;
+  border-left: 4px solid @c_grey_light;
+  height: fit-content;
 
   &__list {
     list-style: none;
+    margin-left: unit(@gap/@base,rem);
   }
 
   &__item {
@@ -12,5 +12,28 @@
   }
   &__link {
     #type > #style > .link;
+    &--active {
+      font-weight: bold;
+    }
   }
+
+  &__list--level-0 > &__item:not(:first-child) {
+    margin-top: unit(@gap/@base,rem);
+  }
+
+  &__list--level-0 > &__item > &__link {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: unit(@gap/2/@base,rem);
+      height: 4px;
+      background-color: @c_grey_light;
+      top: 50%;
+      left: unit(-1 * @gap/@base,rem);
+      margin-top: -2px;
+    }
+  }
+
 }

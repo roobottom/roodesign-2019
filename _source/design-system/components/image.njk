@@ -1,0 +1,58 @@
+---
+title: Images
+---
+{% import "./../../_includes/components.njk" as c %}
+{{ c.prose('I use images liberally throughout the site. So there are lots of styling classes and frame-types available.',['article']) }}
+{%- set imageNunjucks -%}{% raw %}
+{{ c.image(
+  url= '/assets/images/design-system/example-portrait.jpeg',
+  caption= 'A landscape photo of the sunset over Littlehampton beach.'
+) }}
+{% endraw %}{%- endset -%}
+{% set imageHTML %}
+{{ c.image(
+  url= '/assets/images/design-system/example-landscape.jpeg',
+  caption= 'A landscape photo of the sunset over Littlehampton beach.'
+) }}
+{% endset %}
+
+{{ c.dsExample(imageHTML, imageNunjucks) }}
+
+{% set nunjucksOptions %}
+## Nunjucks options
+
+Name | Type | Description
+--- | --- | ---
+`url` | String | **Required**. The url of the image.
+`caption` | Markdown | A caption for the image. If no caption is passed then the image is marked with `aria-hidden="true"`
+`classes` | Array | One or more Nunjucks variables from the styling classes.
+`frame` | String | A Nunjucks variable from the supported frames-types.
+
+## Styling classes
+
+HTML Class name | Nunjucks variable | Description
+--- | --- | ---
+`figure--full` | `full` | Forces the image to fill 100% of its container
+`figure--rotate-right` | `rotate-right` | Applies a transformation of `2deg` to the image
+`figure--rotate-left` | `rotate-left` | Applies a transformation of `-2deg` to the image
+`figure--bleed-start` | `bleed-start` | Forces the image to hang-off the start of its container
+`figure--bleed-end` | `bleed-end` | Forces the image to hang-off the end of its container
+`figure--stage` | `stage` | Applies a stylised container around the image
+`figure--shadow` | `shadow` | Applies a dropshadow to the image
+`figure--green` | `green` | Applies a light green background to the image
+`figure--blue` | `green` | Applies a light blue background to the image
+`figure--red` | `red` | Applies a light red background to the image
+`figure--yellow` | `yellow` | Applies a light yellow background to the image
+
+## Frame options
+
+Frame class names are applied to the `figure__images` element.
+
+HTML Class name | Nunjucks variable | Description
+--- | --- | ---
+`frame-laptop` | `laptop` | Wraps the image in a stylised laptop frame
+`frame-tablet` | `tablet` | Wraps the image in a stylised tablet frame
+`frame-phone` | `phone` | Wraps the image in a stylised phone frame
+`frame-photo` | `photo` | Wraps the image in a stylised frame suitable for standalone photos
+{% endset %}
+{{ c.prose(nunjucksOptions,['article']) }}

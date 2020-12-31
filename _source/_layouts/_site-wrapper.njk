@@ -2,12 +2,15 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
+{% set titleElement = title %}
+{% if page.url.startsWith('/design-system') %}{% set titleElement = 'Design system / ' + title %}{% endif %}
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Portfolio of Jon Roobottom, a designer from the UK">
-    <title>{{ title }} / Roodesign</title>
+    <title>{{ titleElement }} / Roodesign</title>
     <link href="/assets/roodesign.css" rel="stylesheet"/>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="webmention" href="https://webmention.io/roodesign.co.uk/webmention" />
@@ -30,7 +33,6 @@
             </svg>
         </a>
         <ul class="navigation__items">
-          <li><a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
           {% for link in navigation %}
             <li><a href="{{ link.url }}" {% if page.url.startsWith(link.url) %}class="active"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}

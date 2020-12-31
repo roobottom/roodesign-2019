@@ -73,12 +73,23 @@ module.exports = function (config) {
   })
 
   //design system
-  config.addCollection("dsStyles", function(collection) {
-    return collection.getFilteredByGlob('_source/design-system/styles/*.njk')
+  config.addCollection("dsBrand", collection => {
+    const docs = collection.getFilteredByGlob("_source/design-system/brand/*.njk")
+      .sort((a, b) => {
+        return Number(a.data.order) - Number(b.data.order);
+      });
+    return docs;
   })
-  config.addCollection("dsComponents", function(collection) {
-    return collection.getFilteredByGlob('_source/design-system/components/*.njk')
-  })
+  config.addCollection("dsStyles", (collection) =>
+    collection.getFilteredByGlob("_source/design-system/styles/*.njk")
+  )
+  config.addCollection("dsComponents", (collection) =>
+    collection.getFilteredByGlob("_source/design-system/components/*.njk").sort((a, b) => {
+      if (a.data.title < b.data.title) return -1;
+      else if (a.data.title > b.data.title) return 1;
+      else return 0;
+    })
+  )
 
 
   return {
