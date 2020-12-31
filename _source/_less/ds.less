@@ -42,24 +42,40 @@
   //example
 
   &-example {
-    border: 1px solid @c_grey_med;
+    
     margin-left: -1 * @gap-rem;
     margin-bottom: 2* @gap-rem;
-    box-shadow: 
-      4px 4px 0 white,
-      8px 8px 0 @c_grey_med;
 
     &__showcase {
       padding: @gap-rem;
+      border: 1px dotted @c_grey_med;
+      border-bottom: none;
     }
 
     &__code {
+      border: 1px solid @c_grey_med;
+      padding: @gap-rem;
+      background-color: lighten(@c_grey_light, 4%);
+    }
+
+    &__code-title {
+      margin-bottom: @gap-rem;
+      #type > #size > .regular;
+      display:block;
+    }
+
+    &__html + &__code-title {
+      margin-top: @gap-rem;
+    }
+
+    &__html,
+    &__nunjucks {
       font-family: 'Fira Code', monospace;
       font-size: 1rem;
       padding: @gap-rem;
-      background-color: @c_grey_light;
+      background-color: lighten(@c_grey_light, 2%);
       overflow-x: auto;
-      border-top: 1px solid @c_grey_med;
+      border: 1px solid @c_grey_med;
     }
   }
 

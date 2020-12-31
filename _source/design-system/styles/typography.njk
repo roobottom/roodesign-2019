@@ -22,6 +22,7 @@ There are three heading styles used globally. These are generally marked-up as `
 <h2>Heading level 2</h2>
 <h3>Heading level 3</h3>
 {% endset %}
+
 {% set overideHeadings %}
 ### Overriding headings
 Sometimes I need to use the correct `h#` to maintain semantic meaning but make the heading visually smaller or larger. I can do this with override heading classes.
@@ -29,9 +30,24 @@ Sometimes I need to use the correct `h#` to maintain semantic meaning but make t
 {% set overideHeadingsEg %}
 <h3 class="h1">Heading level 3 that looks like level 1</h3>
 {% endset %}
-<section class="space--tall">
+<section class="space--grande">
   {{ c.prose(headings,['article'])}}
   {{ c.dsExample(headingsEg) }}
   {{ c.prose(overideHeadings,['article'])}}
   {{ c.dsExample(overideHeadingsEg) }}
+</section>
+
+{% set prose %}
+## Prose
+
+A `prose` wrapper is used to give any text elements within it standard styling. This is to protect these styles from leaking into other components.
+{% endset %}
+{% set proseEg %}
+<div class="prose">
+  <p>Body copy is 16px on small screens and 19px on larger screens.</p>
+</div>
+{% endset %}
+<section class="space--tall">
+  {{ c.prose(prose,['article'])}}
+  {{ c.dsExample(proseEg) }}
 </section>

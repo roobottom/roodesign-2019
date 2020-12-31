@@ -127,11 +127,11 @@ frame:
 {% endmacro %}
 
 {# boxout #}
-{% macro boxout(content,classes) %}
-<div class="boxout prose {% if classes%}{% for class in classes %}boxout--{{ class }}{% endfor %}{% endif %}">
- {{ content | md | safe }}
+{% macro boxout(content,classes) -%}
+<div class="boxout prose {% if classes %}{% for class in classes %}boxout--{{ class }}{% endfor %}{% endif %}">
+  {{ content | md | safe -}}
 </div>
-{% endmacro %}
+{%- endmacro %}
 
 {# quote #}
 {% macro quote(content,cite) %}
@@ -189,7 +189,13 @@ frame:
   <div class="ds-example__showcase">
     {{ html | safe }}
   </div>
-  <pre class="ds-example__code ds-example__code--html">{{ html }}</pre>
-  {%- if nunjucks -%}<pre class="ds-example__code ds-example__code--nunjucks">{{ nunjucks }}</pre>{%- endif -%}
+  <div class="ds-example__code">
+    <span class="ds-example__code-title">HTML</span>
+    <pre class="ds-example__html">{{ html }}</pre>
+    {%- if nunjucks -%}
+    <span class="ds-example__code-title">Nunjucks</span>
+    <pre class="ds-example__nunjucks">{{ nunjucks }}</pre>
+    {%- endif -%}
+  </div>
 </div>
 {% endmacro %}

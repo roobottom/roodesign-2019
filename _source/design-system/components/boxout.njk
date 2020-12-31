@@ -1,3 +1,16 @@
 ---
 title: Boxouts
 ---
+{% import "./../../_includes/components.njk" as c %}
+{%- set boxoutNunjucks -%}{% raw %}
+{{ c.boxout(
+  content='Some really important text _that_ you **want** to draw attention to.'
+) }}
+{% endraw %}{%- endset -%}
+{% set boxoutHTML %}
+{{ c.boxout(
+  content='Some really important text _that_ you **want** to draw attention to.'
+) }}
+{% endset %}
+
+{{ c.dsExample(boxoutHTML, boxoutNunjucks) }}
